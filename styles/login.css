@@ -40,7 +40,7 @@
     justify-content: center;
     width: 100%;
     max-width: 1440px;
-    padding: 86px 24px 24px;
+    padding: 86px 24px 16px;
 }
 
 .login-card {
@@ -76,7 +76,7 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     width: 100%;
 }
 
@@ -88,6 +88,10 @@
 }
 
 /* signup */
+
+.signup-main {
+    padding-top: 9px;
+}
 
 .signup-card {
     max-width: 600px;
@@ -157,7 +161,7 @@
 .login-footer {
     display: flex;
     gap: 24px;
-    padding: 24px 0;
+    padding: 16px 0;
     font-size: 0.9rem;
     color: var(--color-grey);
 }
