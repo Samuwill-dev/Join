@@ -1,0 +1,6 @@
+.user-profile {
+    width: 56px;
+    height: 56px;
+    border: var(--border);
+    border-radius: 28px;
+}
