@@ -1,0 +1,172 @@
+/* login page (Desktop first) – Maße teils nach Screenshot geschätzt */
+
+.login-page {
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1240px;
+    padding-top: 67px;
+}
+
+.login-logo {
+    width: 100px;
+    height: auto;
+}
+
+.signup-wrap {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.signup-wrap span {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* card */
+
+.login-main {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    padding: 86px 24px 24px;
+}
+
+.login-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 652px;
+    min-height: 449px;
+    justify-content: center;
+    padding: 48px 115px;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.14);
+}
+
+.login-card h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.title-underline {
+    width: 150px;
+    height: 3px;
+    margin: 16px 0 32px;
+    border-radius: 3px;
+    background-color: var(--color-blue);
+}
+
+/* form */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+/* signup */
+
+.signup-card {
+    max-width: 600px;
+    min-height: 630px;
+    padding: 48px 89px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 69px;
+    left: 48px;
+    display: flex;
+    padding: 4px;
+    border: unset;
+    border-radius: 50%;
+    background: unset;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.back-btn:hover {
+    background-color: var(--main-bg);
+}
+
+.privacy-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    cursor: pointer;
+}
+
+.privacy-check a {
+    color: var(--sidebar-bg);
+    transition: color 100ms ease;
+}
+
+.privacy-check a:hover {
+    color: var(--color-blue);
+}
+
+.privacy-check input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border: 2px solid var(--sidebar-bg);
+    border-radius: 3px;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.privacy-check input:checked {
+    background: var(--sidebar-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' fill='none' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+
+.privacy-error {
+    text-align: center;
+}
+
+/* footer */
+
+.login-footer {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+}
+
+.login-footer a {
+    color: inherit;
+    transition: color 100ms ease;
+}
+
+.login-footer a:hover {
+    color: var(--color-blue);
+}

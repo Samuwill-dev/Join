@@ -6,6 +6,10 @@
     --color-white-secondary: rgb(231, 231, 231);
     --main-bg: rgb(246, 247, 248);
     --active: rgb(9, 25, 49);
+    --color-hover: rgb(18, 70, 88);
+    --color-blue: rgb(41, 171, 226);
+    --color-grey: rgb(122, 122, 122);
+    --color-error: rgb(255, 0, 62);
 
     /* borders */
     --border-width: 2px;

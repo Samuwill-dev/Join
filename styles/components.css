@@ -4,3 +4,114 @@
     border: var(--border);
     border-radius: 28px;
 }
+
+/* helpers */
+
+.d-none {
+    display: none !important;
+}
+
+/* buttons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 48px;
+    padding: 15px 24px;
+    border: unset;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 100ms ease, box-shadow 100ms ease, color 100ms ease;
+}
+
+.btn-primary {
+    background-color: var(--sidebar-bg);
+    color: var(--color-white);
+}
+
+.btn-primary:hover:enabled {
+    background-color: var(--color-hover);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:active:enabled {
+    background-color: var(--active);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    border: 1px solid var(--sidebar-bg);
+    color: var(--sidebar-bg);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-hover);
+    color: var(--color-hover);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-secondary:active {
+    border-color: var(--active);
+    color: var(--active);
+}
+
+.btn:disabled {
+    cursor: default;
+}
+
+.btn-small {
+    height: auto;
+    padding: 15px 16px;
+    font-size: 1rem;
+}
+
+/* form inputs */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 12px 52px 12px 21px;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    background-color: var(--color-white);
+    font-family: inherit;
+    font-size: 1.2rem;
+    outline: unset;
+    transition: border-color 100ms ease;
+}
+
+.input-wrap input:focus {
+    border-color: var(--color-blue);
+}
+
+.input-wrap img {
+    position: absolute;
+    right: 21px;
+    pointer-events: none;
+}
+
+.input-group.has-error input {
+    border-color: var(--color-error);
+}
+
+.error-msg {
+    min-height: 18px;
+    font-size: 0.8rem;
+    color: var(--color-error);
+}

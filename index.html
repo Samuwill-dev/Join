@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Log in</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body class="login-page">
+    <header class="login-header">
+        <img class="login-logo" src="assets/icons/logoDark.svg" alt="Join logo">
+        <div class="signup-wrap" id="signupWrap">
+            <span>Not a Join user?</span>
+            <button class="btn btn-primary btn-small" type="button" id="showSignupBtn">Sign up</button>
+        </div>
+    </header>
+
+    <main class="login-main" id="loginMain">
+        <section class="login-card">
+            <h1>Log in</h1>
+            <span class="title-underline"></span>
+
+            <form id="loginForm" class="login-form" novalidate>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="loginEmail" type="text" placeholder="Email" aria-label="Email" autocomplete="email">
+                        <img src="assets/icons/loginMail.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="loginEmailError" aria-live="polite"></span>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="loginPassword" type="password" placeholder="Password" aria-label="Password" autocomplete="current-password">
+                        <img src="assets/icons/loginPassword.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="loginPasswordError" aria-live="polite"></span>
+                </div>
+
+                <div class="login-buttons">
+                    <button class="btn btn-primary" type="submit" id="loginBtn">Log in</button>
+                    <button class="btn btn-secondary" type="button" id="guestLoginBtn">Guest Log in</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <main class="login-main d-none" id="signupMain">
+        <section class="login-card signup-card">
+            <button class="back-btn" type="button" id="backToLoginBtn" aria-label="Back to log in">
+                <img src="assets/icons/arrow-left.svg" alt="">
+            </button>
+            <h1>Sign up</h1>
+            <span class="title-underline"></span>
+
+            <form id="signupForm" class="login-form" novalidate>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="signupName" type="text" placeholder="Name" aria-label="Name" autocomplete="name">
+                        <img src="assets/icons/person.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="signupNameError" aria-live="polite"></span>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="signupEmail" type="text" placeholder="Email" aria-label="Email" autocomplete="email">
+                        <img src="assets/icons/loginMail.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="signupEmailError" aria-live="polite"></span>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="signupPassword" type="password" placeholder="Password" aria-label="Password" autocomplete="new-password">
+                        <img src="assets/icons/loginPassword.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="signupPasswordError" aria-live="polite"></span>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="signupConfirm" type="password" placeholder="Confirm Password" aria-label="Confirm Password" autocomplete="new-password">
+                        <img src="assets/icons/loginPassword.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="signupConfirmError" aria-live="polite"></span>
+                </div>
+
+                <div class="input-group">
+                    <label class="privacy-check">
+                        <input id="privacyCheck" type="checkbox">
+                        <span>I accept the <a href="html/privacyPolicy.html">Privacy policy</a></span>
+                    </label>
+                    <span class="error-msg privacy-error" id="privacyError" aria-live="polite"></span>
+                </div>
+
+                <div class="login-buttons">
+                    <button class="btn btn-primary" type="submit" id="signupBtn" disabled>Sign up</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="login-footer">
+        <a href="html/privacyPolicy.html">Privacy Policy</a>
+        <a href="html/legalNotice.html">Legal notice</a>
+    </footer>
+</body>
+
+</html>
