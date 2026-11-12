@@ -102,7 +102,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    padding: 0 40px 0 58px;
+    padding: 0 40px 0 60px;
     background-color: var(--color-white);
     box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.14);
 }
