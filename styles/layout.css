@@ -63,6 +63,16 @@ aside {
     color: var(--color-white-secondary);
 }
 
+.legal-links a.active {
+    display: block;
+    margin-left: -70px;
+    padding: 10px 0 10px 70px;
+    border-radius: 6px;
+    background-color: var(--active);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
 
 /* header */
 
