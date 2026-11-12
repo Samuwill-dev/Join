@@ -1,5 +1,26 @@
 /* sidebar */
 
+body.app-layout {
+    display: block;
+    padding-left: 250px;
+}
+
+body.app-layout > .shared-template {
+    display: contents;
+}
+
+body.app-layout aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+body.app-layout main {
+    min-height: calc(100vh - 90px);
+}
+
 aside {
     display: flex;
     flex-direction: column;
