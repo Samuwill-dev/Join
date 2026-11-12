@@ -1,0 +1,24 @@
+body.app-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-rows: 90px minmax(0, 1fr);
+}
+
+body.app-layout > .shared-template {
+    display: contents;
+}
+
+body.app-layout aside {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+body.app-layout header {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+body.app-layout main {
+    grid-column: 2;
+    grid-row: 2;
+}
