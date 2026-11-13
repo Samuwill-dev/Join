@@ -22,7 +22,7 @@
 .signup-wrap {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 35px;
 }
 
 .signup-wrap span {
@@ -83,7 +83,7 @@
 .login-buttons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 35px;
     margin-top: 16px;
 }
 
@@ -96,15 +96,19 @@
 .signup-card {
     max-width: 600px;
     min-height: 630px;
-    padding: 48px 89px;
+    padding: 48px 88px;
 }
 
 .back-btn {
     position: absolute;
-    top: 69px;
+    top: 64px;
     left: 48px;
     display: flex;
-    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
     border: unset;
     border-radius: 50%;
     background: unset;
@@ -121,13 +125,13 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 0.9rem;
-    color: var(--color-grey);
+    font-size: 1rem;
+    color: var(--color-text-grey);
     cursor: pointer;
 }
 
 .privacy-check a {
-    color: var(--sidebar-bg);
+    color: var(--color-hover);
     transition: color 100ms ease;
 }
 
@@ -162,8 +166,8 @@
     display: flex;
     gap: 24px;
     padding: 16px 0;
-    font-size: 0.9rem;
-    color: var(--color-grey);
+    font-size: 1rem;
+    color: var(--color-text-grey);
 }
 
 .login-footer a {
