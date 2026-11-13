@@ -1,5 +1,26 @@
 /* sidebar */
 
+body.app-layout {
+    display: block;
+    padding-left: 250px;
+}
+
+body.app-layout > .shared-template {
+    display: contents;
+}
+
+body.app-layout aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+body.app-layout main {
+    min-height: calc(100vh - 90px);
+}
+
 aside {
     display: flex;
     flex-direction: column;
@@ -63,6 +84,16 @@ aside {
     color: var(--color-white-secondary);
 }
 
+.legal-links a.active {
+    display: block;
+    margin-left: -70px;
+    padding: 10px 0 10px 70px;
+    border-radius: 6px;
+    background-color: var(--active);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
 
 /* header */
 
@@ -71,7 +102,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    padding: 0 40px 0 58px;
+    padding: 0 40px 0 60px;
     background-color: var(--color-white);
     box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.14);
 }

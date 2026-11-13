@@ -1,49 +1,25 @@
-<!DOCTYPE html>
-<html lang="de">
+<aside>
+    <div class="logo-wrap">
+        <img class="logo" src="../assets/icons/logo.svg" alt="Join">
+    </div>
+    <nav class="sidebar-nav" data-internal-navigation>
+        <a class="nav-item" data-page="summary" href="../html/summary.html"><img src="../assets/icons/summary-icon.svg" alt=""><span>Summary</span></a>
+        <a class="nav-item" data-page="addTask" href="../html/addTask.html"><img src="../assets/icons/add-task-icon.svg" alt=""><span>Add Task</span></a>
+        <a class="nav-item" data-page="board" href="../html/board.html"><img src="../assets/icons/board-icon.svg" alt=""><span>Board</span></a>
+        <a class="nav-item" data-page="contacts" href="../html/contacts.html"><img src="../assets/icons/Contacts-icon.svg" alt=""><span>Contacts</span></a>
+    </nav>
+    <nav class="sidebar-nav" data-external-navigation hidden>
+        <a class="nav-item" href="../Index.html"><span>Log in</span></a>
+    </nav>
+    <section class="legal-links">
+        <a data-page="privacyPolicy" href="../html/privacyPolicy.html">Privacy Policy</a>
+        <a data-page="legalNotice" href="../html/legalNotice.html">Legal notice</a>
+    </section>
+</aside>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-
-    <link rel="stylesheet" href="../styles/fonts.css">
-    <link rel="stylesheet" href="../styles/variables.css">
-    <link rel="stylesheet" href="../styles/layout.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-    <aside>
-        <div class="logo-wrap">
-            <img class="logo" src="../assets/icons/logo.svg" alt="logo">
-        </div>
-        <nav class="sidebar-nav">
-            <a class="nav-item active" href="../html/summary.html"><img src="../assets/icons/summary-icon.svg" alt=""><span>Summary</span></a>
-            <a class="nav-item" href="../html/add_task.html"><img src="../assets/icons/add-task-icon.svg" alt=""><span>Add Task</span></a>
-            <a class="nav-item" href="../html/board.html"><img src="../assets/icons/board-icon.svg" alt=""><span>Board</span></a>
-            <a class="nav-item" href="../html/contacts.html"><img src="../assets/icons/Contacts-icon.svg" alt=""><span>Contacts</span></a>
-        </nav>
-        <section class="legal-links">
-            <a href="">Privacy Policy</a>
-            <a href="">Legal notice</a>
-        </section>
-    </aside>
-
-
-    <main>
-        <header>
-            <h4>Kanban Project Management Tool</h4>
-            <div class="header-actions">
-                <a href="#"><img class="help-icon" src="../assets/icons/help.svg" alt="help page"></a>
-                <button class="user-profile" type="button">SM</button>
-            </div>
-        </header>
-
-        <!-- hier main content -->
-
-    </main>
-</body>
-
-</html>
+<header>
+    <h4>Kanban Project Management Tool</h4>
+    <div class="header-actions">
+        <button class="user-profile" type="button" data-profile-button>SM</button>
+    </div>
+</header>
