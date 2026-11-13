@@ -64,6 +64,13 @@ function validateLogin(values) {
 }
 
 
+function getNameError(name) {
+    if (!name) return 'Please enter your name.';
+    if (!isValidFullName(name)) return 'Please enter your first and last name.';
+    return '';
+}
+
+
 function getEmailError(email) {
     if (!email) return 'Please enter your email.';
     if (!isValidEmail(email)) return 'Please enter a valid email address.';
@@ -138,7 +145,7 @@ async function handleSignup(event) {
 
 function getSignupValues() {
     return {
-        name: document.getElementById('signupName').value.trim(),
+        name: cleanUpName(document.getElementById('signupName').value),
         email: document.getElementById('signupEmail').value.trim(),
         password: document.getElementById('signupPassword').value,
         confirm: document.getElementById('signupConfirm').value
@@ -148,7 +155,7 @@ function getSignupValues() {
 
 function validateSignup(values) {
     const errors = {
-        signupName: values.name ? '' : 'Please enter your name.',
+        signupName: getNameError(values.name),
         signupEmail: getEmailError(values.email),
         signupPassword: values.password ? '' : 'Please enter a password.',
         signupConfirm: values.password === values.confirm ? '' : "Your passwords don't match. Please try again."
@@ -164,7 +171,7 @@ async function createAccount(values) {
             showFieldError('signupEmail', 'This email is already registered.');
             return false;
         }
-        await addUser({ name: values.name, email: values.email, password: values.password, color: getRandomColor() });
+        await addUser({ name: capitalizeName(values.name), email: values.email, password: values.password, color: getRandomColor() });
         return true;
     } catch (error) {
         showFieldError('signupConfirm', 'Sign up failed. Please try again later.');

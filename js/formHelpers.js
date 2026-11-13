@@ -1,8 +1,24 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const FULL_NAME_PATTERN = /^\p{L}[\p{L}'-]*( \p{L}[\p{L}'-]*)+$/u;
 
 
 function isValidEmail(email) {
     return EMAIL_PATTERN.test(email);
+}
+
+
+function isValidFullName(name) {
+    return FULL_NAME_PATTERN.test(name);
+}
+
+
+function cleanUpName(name) {
+    return name.trim().replace(/\s+/g, ' ');
+}
+
+
+function capitalizeName(name) {
+    return name.replace(/(^|[ -])\p{L}/gu, letter => letter.toUpperCase());
 }
 
 
