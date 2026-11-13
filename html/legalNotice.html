@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/legal.css">
+    <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
 </head>
 
-<body class="app-layout" onload="includeHTML()">
+<body class="app-layout" onload="requireLogin(); includeHTML()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="legalNotice"></div>
     <main class="legal-content">
         <h1>Legal Notice</h1>
