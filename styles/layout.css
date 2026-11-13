@@ -118,10 +118,22 @@ header h4 {
     gap: 20px;
 }
 
+.help-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.help-link.active {
+    display: none;
+}
+
 .help-icon {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
 .user-profile {
