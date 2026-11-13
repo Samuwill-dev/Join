@@ -1,4 +1,5 @@
 const SESSION_KEY = 'joinUser';
+const LOGIN_PAGE = '../index.html';
 
 
 function setSession(user) {
@@ -26,4 +27,15 @@ function clearSession() {
 
 function createGuestUser() {
     return { id: 'guest', name: 'Guest', email: '', isGuest: true };
+}
+
+
+function requireLogin() {
+    if (!getSession()) window.location.replace(LOGIN_PAGE);
+}
+
+
+function logout() {
+    clearSession();
+    window.location.href = LOGIN_PAGE;
 }

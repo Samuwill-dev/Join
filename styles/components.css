@@ -49,18 +49,19 @@
     color: var(--sidebar-bg);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:enabled {
     border-color: var(--color-hover);
     color: var(--color-hover);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.btn-secondary:active {
+.btn-secondary:active:enabled {
     border-color: var(--active);
     color: var(--active);
 }
 
 .btn:disabled {
+    opacity: 0.6;
     cursor: default;
 }
 
@@ -102,13 +103,31 @@
 }
 
 .input-wrap input:focus {
-    border-color: var(--color-blue);
+    border-color: var(--color-hover);
 }
 
-.input-wrap img {
+.input-wrap > img {
     position: absolute;
     right: 21px;
     pointer-events: none;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: unset;
+    background: unset;
+    cursor: pointer;
+}
+
+.password-toggle:disabled {
+    cursor: default;
 }
 
 .input-group.has-error input {
@@ -116,7 +135,7 @@
 }
 
 .error-msg {
-    min-height: 16px;
-    font-size: 0.8rem;
+    min-height: 19px;
+    font-size: 1rem;
     color: var(--color-error);
 }

@@ -160,6 +160,31 @@
     text-align: center;
 }
 
+/* toast */
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 74px;
+    padding: 0 25px;
+    border-radius: 20px;
+    background-color: var(--sidebar-bg);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    color: var(--color-white);
+    font-size: 1.25rem;
+    white-space: nowrap;
+    transform: translate(-50%, 100vh);
+    transition: transform 125ms ease-out;
+}
+
+.toast.toast-visible {
+    transform: translate(-50%, -50%);
+}
+
 /* footer */
 
 .login-footer {

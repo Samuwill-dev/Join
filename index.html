@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/login.css">
     <script src="js/data.js" defer></script>
     <script src="js/session.js" defer></script>
+    <script src="js/formHelpers.js" defer></script>
     <script src="js/login.js" defer></script>
 </head>
 
@@ -43,7 +44,9 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <input id="loginPassword" type="password" placeholder="Password" aria-label="Password" autocomplete="current-password">
-                        <img src="assets/icons/loginPassword.svg" alt="">
+                        <button class="password-toggle" type="button" id="loginPasswordToggle" aria-label="Show password" disabled>
+                            <img src="assets/icons/loginPassword.svg" alt="">
+                        </button>
                     </div>
                     <span class="error-msg" id="loginPasswordError" aria-live="polite"></span>
                 </div>
@@ -84,7 +87,9 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <input id="signupPassword" type="password" placeholder="Password" aria-label="Password" autocomplete="new-password">
-                        <img src="assets/icons/loginPassword.svg" alt="">
+                        <button class="password-toggle" type="button" id="signupPasswordToggle" aria-label="Show password" disabled>
+                            <img src="assets/icons/loginPassword.svg" alt="">
+                        </button>
                     </div>
                     <span class="error-msg" id="signupPasswordError" aria-live="polite"></span>
                 </div>
@@ -92,7 +97,9 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <input id="signupConfirm" type="password" placeholder="Confirm Password" aria-label="Confirm Password" autocomplete="new-password">
-                        <img src="assets/icons/loginPassword.svg" alt="">
+                        <button class="password-toggle" type="button" id="signupConfirmToggle" aria-label="Show password" disabled>
+                            <img src="assets/icons/loginPassword.svg" alt="">
+                        </button>
                     </div>
                     <span class="error-msg" id="signupConfirmError" aria-live="polite"></span>
                 </div>
@@ -111,6 +118,8 @@
             </form>
         </section>
     </main>
+
+    <div class="toast" id="signupToast" role="status">You Signed Up successfully</div>
 
     <footer class="login-footer">
         <a href="html/privacyPolicy.html">Privacy Policy</a>

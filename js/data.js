@@ -1,4 +1,9 @@
 const BASE_URL = 'https://join-b2fa2-default-rtdb.firebaseio.com/';
+const USER_COLORS = [
+    '#FF7A00', '#FF5EB3', '#6E52FF', '#9327FF', '#00BEE8',
+    '#1FD7C1', '#FF745E', '#FFA35E', '#FC71FF', '#FFC701',
+    '#0038FF', '#C3FF2B', '#FFE62B', '#FF4646', '#FFBB2B'
+];
 
 
 async function fetchJson(path, options) {
@@ -42,4 +47,9 @@ async function addUser(user) {
 async function findUserByEmail(email) {
     const users = await loadUsers();
     return users.find(user => user.email.toLowerCase() === email.toLowerCase());
+}
+
+
+function getRandomColor() {
+    return USER_COLORS[Math.floor(Math.random() * USER_COLORS.length)];
 }
