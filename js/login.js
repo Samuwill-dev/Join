@@ -2,6 +2,9 @@ const SUMMARY_PAGE = 'html/summary.html';
 const LOGIN_FIELDS = ['loginEmail', 'loginPassword'];
 const SIGNUP_FIELDS = ['signupName', 'signupEmail', 'signupPassword', 'signupConfirm'];
 const TOAST_DURATION = 1500;
+const INTRO_WAIT_TIME = 300;
+const INTRO_MOVE_TIME = 800; // same as the transition in login.css
+const BIG_LOGO_WIDTH = 274;
 
 
 function showSignup() {
@@ -188,6 +191,53 @@ function resetSignupForm() {
 }
 
 
+function playIntro() {
+    const logo = document.getElementById('loginLogo');
+    const overlay = document.getElementById('introOverlay');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return removeIntro(logo, overlay);
+    }
+    logo.style.transform = getTransformToCenter(logo);
+    document.body.classList.remove('intro');
+    setTimeout(() => moveLogoToHeader(logo, overlay), INTRO_WAIT_TIME);
+}
+
+
+/**
+ * Calculates the transform that moves the logo from its normal place
+ * in the header to the middle of the screen and makes it bigger.
+ * The logo stays in the header, it is only moved visually.
+ * @param {HTMLElement} logo - The logo image in the header.
+ * @returns {string} The transform value, e.g. "translate(570px, 384px) scale(2.74)".
+ */
+function getTransformToCenter(logo) {
+    const logoBox = logo.getBoundingClientRect();
+    // distance from the middle of the logo to the middle of the screen
+    const distanceX = window.innerWidth / 2 - (logoBox.left + logoBox.width / 2);
+    const distanceY = window.innerHeight / 2 - (logoBox.top + logoBox.height / 2);
+    // how much bigger the logo is in the middle (274px instead of 100px)
+    const scaleFactor = BIG_LOGO_WIDTH / logoBox.width;
+    // translate first, otherwise the scale would also make the movement bigger
+    return `translate(${distanceX}px, ${distanceY}px) scale(${scaleFactor})`;
+}
+
+
+function moveLogoToHeader(logo, overlay) {
+    logo.classList.add('logo-moving');
+    logo.style.transform = '';
+    overlay.classList.add('intro-overlay-hidden');
+    setTimeout(() => removeIntro(logo, overlay), INTRO_MOVE_TIME);
+}
+
+
+function removeIntro(logo, overlay) {
+    document.body.classList.remove('intro');
+    logo.classList.remove('logo-moving');
+    overlay.remove();
+}
+
+
+playIntro();
 initLoginSwitch();
 initLoginForm();
 initSignupForm();

@@ -15,8 +15,32 @@
 }
 
 .login-logo {
+    position: relative;
+    z-index: 30;
     width: 100px;
     height: auto;
+}
+
+/* intro animation */
+
+.intro .login-logo {
+    visibility: hidden;
+}
+
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background-color: var(--main-bg);
+    transition: opacity 800ms ease-in-out;
+}
+
+.intro-overlay.intro-overlay-hidden {
+    opacity: 0;
+}
+
+.login-logo.logo-moving {
+    transition: transform 800ms ease-in-out;
 }
 
 .signup-wrap {

@@ -18,9 +18,11 @@
     <script src="js/login.js" defer></script>
 </head>
 
-<body class="login-page">
+<body class="login-page intro">
+    <div class="intro-overlay" id="introOverlay"></div>
+
     <header class="login-header">
-        <img class="login-logo" src="assets/icons/logoDark.svg" alt="Join logo">
+        <img class="login-logo" id="loginLogo" src="assets/icons/logoDark.svg" alt="Join logo" width="100" height="122">
         <div class="signup-wrap" id="signupWrap">
             <span>Not a Join user?</span>
             <button class="btn btn-primary btn-small" type="button" id="showSignupBtn">Sign up</button>
