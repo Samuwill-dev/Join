@@ -140,13 +140,15 @@ header h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
     padding: 0;
-    border: var(--border);
+    border: 3px solid var(--sidebar-bg);
     border-radius: 50%;
     background: var(--color-white);
-    color: var(--sidebar-bg);
-    font-size: 12px;
-    font-weight: 600;
+    color: var(--color-hover);
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
 }

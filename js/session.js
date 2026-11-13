@@ -39,3 +39,22 @@ function logout() {
     clearSession();
     window.location.href = LOGIN_PAGE;
 }
+
+
+function getInitials(name) {
+    const words = name.trim().split(/\s+/);
+    const first = words[0][0];
+    let last;
+    if (words.length > 1) {
+        last = words[words.length - 1][0];
+    } else {
+        last = '';
+    }
+    return (first + last).toUpperCase();
+}
+
+
+function renderUserInitials(profileButton) {
+    const user = getSession();
+    if (user) profileButton.textContent = getInitials(user.name);
+}

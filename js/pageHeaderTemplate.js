@@ -79,8 +79,9 @@ function getLayout(element) {
  */
 function configureNavigation(element, layout, file) {
   const controls = getNavigationElements(element, file);
-  if (layout === 'external') configureExternalLayout(controls);
-  else controls.external.remove();
+  if (layout === 'external') return configureExternalLayout(controls);
+  controls.external.remove();
+  renderUserInitials(controls.profile);
 }
 
 /**
