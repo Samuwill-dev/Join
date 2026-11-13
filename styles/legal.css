@@ -5,3 +5,7 @@
 .list {
     margin: 8px 0;
 }
+
+.join {
+    color: var(--join-marker);
+}
