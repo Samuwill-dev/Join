@@ -104,7 +104,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 64px;
   transition: transform 80ms ease-in-out;
 }
 .summary-metrics:hover {
@@ -138,6 +138,14 @@
   transform: scale(1.05);
   background-color: #2a3647;
   color: #ffffff;
+}
+
+.summary-metrics-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 130px;
+  height: 96px;
 }
 
 .summary-to-do-text {

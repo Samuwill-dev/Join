@@ -23,17 +23,27 @@
     <script src="../script.js"></script>
   </head>
 
-<body class="app-layout" onload="requireLogin(); includeHTML()">
-    <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="summary"></div>
+  <body
+    class="app-layout"
+    onload="
+      requireLogin();
+      includeHTML();
+    "
+  >
+    <div
+      class="shared-template"
+      w3-include-html="../templates/template.html"
+      data-active-page="summary"
+    ></div>
     <main>
       <section class="summary">
         <div class="summary-header">
           <div class="summary-header-title">
-          <h1>Join 360</h1>
+            <h1>Join 360</h1>
           </div>
           <div class="separator"></div>
           <div class="summary-header-subtitle">
-          <p class="summary-header-subtitle-text">Key Metrics at a Glance</p>
+            <p class="summary-header-subtitle-text">Key Metrics at a Glance</p>
           </div>
         </div>
 
@@ -70,10 +80,12 @@
 
           <div class="summary-buttons-urgent">
             <button class="summary-metrics" onclick="gotoBoard()">
-              <img src="../assets/icons/urgent.svg" alt="Urgent Icon" />
               <div class="summary-metrics-text">
-                1
-                <div>Urgent</div>
+                <img src="../assets/icons/urgent.svg" alt="Urgent Icon" />
+                <div class="summary-metrics-content">
+                  1
+                  <div class="summary-metrics-label">Urgent</div>
+                </div>
               </div>
               <div class="separator"></div>
               <p>16,2022 Upcoming Deadline</p>
@@ -81,18 +93,23 @@
           </div>
 
           <div class="summary-buttons-boards">
-            <button class="summary-settings" onclick="gotoBoard()"><div class="summary-to-do-text">5
-              <div class="summary-to-do-label">Tasks in Boards</div>
-            </div>
-              
+            <button class="summary-settings" onclick="gotoBoard()">
+              <div class="summary-to-do-text">
+                5
+                <div class="summary-to-do-label">Tasks in Boards</div>
+              </div>
             </button>
-            <button class="summary-settings" onclick="gotoBoard()"><div class="summary-to-do-text">2
-              <div class="summary-to-do-label">Tasks In Progress</div>
-            </div>
+            <button class="summary-settings" onclick="gotoBoard()">
+              <div class="summary-to-do-text">
+                2
+                <div class="summary-to-do-label">Tasks In Progress</div>
+              </div>
             </button>
-            <button class="summary-settings" onclick="gotoBoard()"><div class="summary-to-do-text">2
-              <div class="summary-to-do-label">Awaiting Feedback</div>
-            </div>
+            <button class="summary-settings" onclick="gotoBoard()">
+              <div class="summary-to-do-text">
+                2
+                <div class="summary-to-do-label">Awaiting Feedback</div>
+              </div>
             </button>
           </div>
         </div>
