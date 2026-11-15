@@ -18,16 +18,13 @@
     <link rel="stylesheet" href="../styles/icons.css" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../styles/legal.css" />
+    <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
     <script src="../script.js"></script>
   </head>
 
-  <body class="app-layout" onload="includeHTML()">
-    <div
-      class="shared-template"
-      w3-include-html="../templates/template.html"
-      data-active-page="summary"
-    ></div>
+<body class="app-layout" onload="requireLogin(); includeHTML()">
+    <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="summary"></div>
     <main>
       <section class="summary">
         <div class="summary-content">

@@ -79,8 +79,9 @@ function getLayout(element) {
  */
 function configureNavigation(element, layout, file) {
   const controls = getNavigationElements(element, file);
-  if (layout === 'external') configureExternalLayout(controls);
-  else controls.external.remove();
+  if (layout === 'external') return configureExternalLayout(controls);
+  controls.external.remove();
+  initUserMenu();
 }
 
 /**
@@ -92,7 +93,7 @@ function configureNavigation(element, layout, file) {
 function getNavigationElements(element, file) {
   const internal = element.querySelector('[data-internal-navigation]');
   const external = element.querySelector('[data-external-navigation]');
-  const profile = element.querySelector('[data-profile-button]');
+  const profile = element.querySelector('[data-user-area]');
   if (!internal || !external || !profile) throw new Error(`The template ${file} is missing required layout elements.`);
   return { internal, external, profile };
 }

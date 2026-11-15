@@ -1,0 +1,229 @@
+/* login page (Desktop first) – Maße teils nach Screenshot geschätzt */
+
+.login-page {
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1240px;
+    padding-top: 67px;
+}
+
+.login-logo {
+    position: relative;
+    z-index: 30;
+    width: 100px;
+    height: auto;
+}
+
+/* intro animation */
+
+.intro .login-logo {
+    visibility: hidden;
+}
+
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background-color: var(--main-bg);
+    transition: opacity 800ms ease-in-out;
+}
+
+.intro-overlay.intro-overlay-hidden {
+    opacity: 0;
+}
+
+.login-logo.logo-moving {
+    transition: transform 800ms ease-in-out;
+}
+
+.signup-wrap {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.signup-wrap span {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* card */
+
+.login-main {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    padding: 86px 24px 16px;
+}
+
+.login-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 652px;
+    min-height: 449px;
+    justify-content: center;
+    padding: 48px 115px;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.14);
+}
+
+.login-card h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.title-underline {
+    width: 150px;
+    height: 3px;
+    margin: 16px 0 32px;
+    border-radius: 3px;
+    background-color: var(--color-blue);
+}
+
+/* form */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 16px;
+}
+
+/* signup */
+
+.signup-main {
+    padding-top: 9px;
+}
+
+.signup-card {
+    max-width: 600px;
+    min-height: 630px;
+    padding: 48px 88px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 64px;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: unset;
+    border-radius: 50%;
+    background: unset;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.back-btn:hover {
+    background-color: var(--main-bg);
+}
+
+.privacy-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: var(--color-text-grey);
+    cursor: pointer;
+}
+
+.privacy-check a {
+    color: var(--color-hover);
+    transition: color 100ms ease;
+}
+
+.privacy-check a:hover {
+    color: var(--color-blue);
+}
+
+.privacy-check input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border: 2px solid var(--sidebar-bg);
+    border-radius: 3px;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.privacy-check input:checked {
+    background: var(--sidebar-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' fill='none' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+
+.privacy-error {
+    text-align: center;
+}
+
+/* toast */
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 74px;
+    padding: 0 25px;
+    border-radius: 20px;
+    background-color: var(--sidebar-bg);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    color: var(--color-white);
+    font-size: 1.25rem;
+    white-space: nowrap;
+    transform: translate(-50%, 100vh);
+    transition: transform 125ms ease-out;
+}
+
+.toast.toast-visible {
+    transform: translate(-50%, -50%);
+}
+
+/* footer */
+
+.login-footer {
+    display: flex;
+    gap: 24px;
+    padding: 16px 0;
+    font-size: 1rem;
+    color: var(--color-text-grey);
+}
+
+.login-footer a {
+    color: inherit;
+    transition: color 100ms ease;
+}
+
+.login-footer a:hover {
+    color: var(--color-blue);
+}
