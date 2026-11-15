@@ -20,7 +20,50 @@
 <body class="app-layout" onload="requireLogin(); includeHTML()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="board"></div>
     <main>
-        <!-- Board content -->
+        <section class="board-header">
+            <h1>Board</h1>
+            <div>
+                <input type="search" name="" id="">
+                <button>Add task +</button>
+            </div>
+        </section>
+        <section class="board">
+            <div>
+                <div class="column-head">
+                    <h2>To do</h2>
+                    <img src="" alt="add task button">
+                </div>
+                <div class="task-section">
+                    <!-- tasks -->
+                </div>
+            </div>
+            <div>
+                <div class="column-head">
+                    <h2>In progress</h2>
+                    <img src="" alt="add task button">
+                </div>
+                <div class="task-section">
+                    <!-- tasks -->
+                </div>
+            </div>
+            <div>
+                <div class="column-head">
+                    <h2>Await feedback</h2>
+                    <img src="" alt="add task button">
+                </div>
+                <div class="task-section">
+                    <!-- tasks -->
+                </div>
+            </div>
+            <div>
+                <div class="column-head">
+                    <h2>Done</h2>
+                </div>
+                <div class="task-section">
+                    <!-- tasks -->
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
