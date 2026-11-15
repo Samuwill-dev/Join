@@ -23,6 +23,13 @@
         <a class="help-link" data-page="help" href="../html/help.html" aria-label="Help">
             <img class="help-icon" src="../assets/icons/help.svg" alt="">
         </a>
-        <button class="user-profile" type="button" data-profile-button></button>
+        <div data-user-area>
+            <button class="user-profile" type="button" aria-label="Open user menu" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu" id="profileButton"></button>
+            <nav class="user-menu d-none" id="userMenu">
+                <a href="../html/legalNotice.html">Legal Notice</a>
+                <a href="../html/privacyPolicy.html">Privacy Policy</a>
+                <button type="button" id="logoutButton">Log out</button>
+            </nav>
+        </div>
     </div>
 </header>

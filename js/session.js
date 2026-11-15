@@ -58,3 +58,34 @@ function renderUserInitials(profileButton) {
     const user = getSession();
     if (user) profileButton.textContent = getInitials(user.name);
 }
+
+
+function initUserMenu() {
+    const button = document.getElementById('profileButton');
+    const menu = document.getElementById('userMenu');
+    renderUserInitials(button);
+    button.addEventListener('click', () => toggleUserMenu(button, menu));
+    document.getElementById('logoutButton').addEventListener('click', logout);
+    document.addEventListener('click', event => closeOnOutsideClick(event, button, menu));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeUserMenu(button, menu);
+    });
+}
+
+
+function toggleUserMenu(button, menu) {
+    const isOpen = !menu.classList.toggle('d-none');
+    button.setAttribute('aria-expanded', isOpen);
+}
+
+
+function closeUserMenu(button, menu) {
+    menu.classList.add('d-none');
+    button.setAttribute('aria-expanded', false);
+}
+
+
+function closeOnOutsideClick(event, button, menu) {
+    const isInside = button.contains(event.target) || menu.contains(event.target);
+    if (!isInside) closeUserMenu(button, menu);
+}
