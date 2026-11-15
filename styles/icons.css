@@ -1,0 +1,24 @@
+.summary-to-do-icon {
+  background-color: #2a3647;
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-to-do:hover .summary-to-do-icon {
+  background-color: #ffffff;
+}
+
+.summary-to-do:hover .summary-to-do-img {
+  filter: brightness(0);
+}
+
+.summary-to-do-img {
+  width: 32px;
+  height: 32px;
+}
+
+

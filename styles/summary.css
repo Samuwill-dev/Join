@@ -1,0 +1,143 @@
+.summary {
+  width: 1208px;
+  height: 691px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+  margin-left: 96px;
+  margin-right: 96px;
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  width: 625px;
+  height: 73px;
+  margin-bottom: 30px;
+}
+
+.separator {
+  background-color: #29abe2;
+  width: 2px;
+  height: 59px;
+}
+
+.summary-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 1025px;
+  height: 562px;
+  gap: 28px;
+}
+
+.summary-buttons-to {
+  width: 560px;
+  height: 168px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-to-do {
+  width: 264px;
+  height: 168px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 4px #00000066);
+  gap: 18px;
+  transition: transform 80ms ease-in-out;
+}
+
+.summary-to-do:hover {
+  transform: scale(1.05);
+  background-color: #2a3647;
+  color: #ffffff;
+}
+
+.summary-to-do-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-buttons-urgent {
+  width: 560px;
+  height: 168px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: #ffffff;
+  text-decoration: none;
+  border: none;
+}
+
+.summary-metrics {
+  width: 560px;
+  height: 168px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0 0 4px #00000066);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  transition: transform 80ms ease-in-out;
+}
+.summary-metrics:hover {
+  transform: scale(1.05);
+  background-color: #2a3647;
+  color: #ffffff;
+}
+
+.summary-buttons-boards {
+  display: flex;
+  justify-content: space-between;
+  width: 560px;
+  height: 168px;
+}
+.summary-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 168px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 4px #00000066);
+  border: none;
+  transition: transform 80ms ease-in-out;
+}
+.summary-settings:hover {
+  transform: scale(1.05);
+  background-color: #2a3647;
+  color: #ffffff;
+}
+
+.summary-to-do-text {
+  width: 63px;
+  height: 101px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  font-weight: 600;
+  text-align: center;
+ 
+}
+
+.summary-to-do-label {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
