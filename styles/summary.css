@@ -8,13 +8,31 @@
   margin-right: 96px;
 }
 
-.summary-content {
+.summary-header {
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 24px;
   width: 625px;
   height: 73px;
   margin-bottom: 30px;
 }
+
+.summary-header-title{
+  width: 264px;
+  height: 73px;
+  font-size: 61px;
+  font-weight: 700;
+}
+
+.summary-header-subtitle{
+  width: 301px;
+  height: 32px;
+  font-size: 27px;
+  font-weight: 200;
+}
+
 
 .separator {
   background-color: #29abe2;
