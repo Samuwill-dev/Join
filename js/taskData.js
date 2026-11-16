@@ -52,3 +52,40 @@ function fillTaskDefaults(task) {
     return task;
 }
 
+
+/**
+ * Saves a new task in Firebase.
+ * Without status the task starts in "todo", without priority it is "medium".
+ * @param {Task} task - The new task without id.
+ * @returns {Promise<Task>} The saved task with the new id.
+ */
+async function addTask(task) {
+    const newTask = removeId(task);
+    if (!newTask.status) newTask.status = TASK_STATUS.todo;
+    if (!newTask.priority) newTask.priority = TASK_PRIORITY.medium;
+    const result = await postData('tasks', newTask);
+    newTask.id = result.name;
+    return fillTaskDefaults(newTask);
+}
+
+
+/**
+ * Changes only the given fields of a task, e.g. { status: TASK_STATUS.done }.
+ * Arrays like subtasks are always sent complete.
+ * @param {string} id - The id of the task.
+ * @param {Object} changes - The fields to change.
+ */
+async function updateTask(id, changes) {
+    await patchData('tasks/' + id, removeId(changes));
+}
+
+
+/**
+ * Deletes a task.
+ * @param {string} id - The id of the task.
+ */
+async function deleteTask(id) {
+    await deleteData('tasks/' + id);
+}
+
+
