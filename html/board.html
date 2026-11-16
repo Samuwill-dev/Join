@@ -13,18 +13,23 @@
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/legal.css">
+    <link rel="stylesheet" href="../styles/board.css">
+    <link rel="stylesheet" href="../styles/components.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
 </head>
 
 <body class="app-layout" onload="requireLogin(); includeHTML()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="board"></div>
-    <main>
+    <main class="conntent">
         <section class="board-header">
             <h1>Board</h1>
             <div>
-                <input type="search" name="" id="">
-                <button>Add task +</button>
+                <label class="search-task" for="search-input">
+                    <input class="search-task-input" id="search-input" type="text" placeholder="Find Task"/>
+                    <img class="search-task-icon" src="../assets/icons/search-icon.svg" alt="start searching">
+                </label>
+                <button class="btn btn-primary">Add task +</button>
             </div>
         </section>
         <section class="board">
