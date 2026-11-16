@@ -24,3 +24,31 @@ const DEMO_DUE_IN_DAYS = 14;
  * @property {Subtask[]} subtasks - The subtasks of the task.
  */
 
+
+/**
+ * Loads all tasks from Firebase.
+ * @returns {Promise<Task[]>} All tasks as an array.
+ */
+async function loadTasks() {
+    const data = await getData('tasks');
+    const tasks = objectToArray(data);
+    const result = [];
+    for (const task of tasks) {
+        result.push(fillTaskDefaults(task));
+    }
+    return result;
+}
+
+
+/**
+ * Adds empty arrays for "assignedTo" and "subtasks" if they are missing.
+ * Workaround: Firebase does not save empty arrays, so they are missing after loading.
+ * @param {Object} task - The task from Firebase.
+ * @returns {Task} The task with both arrays.
+ */
+function fillTaskDefaults(task) {
+    if (!task.assignedTo) task.assignedTo = [];
+    if (!task.subtasks) task.subtasks = [];
+    return task;
+}
+
