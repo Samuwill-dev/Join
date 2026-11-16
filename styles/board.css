@@ -44,3 +44,24 @@
     flex-shrink: 0;
     margin-left: 12px;
 }
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px - 250px - 60px - 60px ;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-head {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.board-plus-icon {
+    width: 24px;
+}
