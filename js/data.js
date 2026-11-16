@@ -92,6 +92,17 @@ function objectToArray(data) {
 
 
 /**
+ * Returns a copy of the data without the "id" field.
+ * @param {Object} data - The data with or without id.
+ * @returns {Object} The data without id.
+ */
+function removeId(data) {
+    const { id, ...rest } = data;
+    return rest;
+}
+
+
+/**
  * Picks a random avatar color, e.g. for a new user or contact.
  * @returns {string} A color from USER_COLORS, e.g. "#FF7A00".
  */
