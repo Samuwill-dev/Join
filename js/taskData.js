@@ -1,7 +1,8 @@
 const TASK_STATUS = { todo: 'todo', inProgress: 'inProgress', awaitFeedback: 'awaitFeedback', done: 'done' };
 const TASK_PRIORITY = { urgent: 'urgent', medium: 'medium', low: 'low' };
 const TASK_CATEGORY = { technical: 'technical', userStory: 'userStory' };
-const DEMO_DUE_IN_DAYS = 14;
+const DEMO_DUE_IN_DAYS = 14; // The demo task is due in 14 days from today.
+const DEMO_ASSIGNED_COUNT = 2; // The demo task is assigned to the first 2 users.
 
 
 /**
@@ -89,3 +90,50 @@ async function deleteTask(id) {
 }
 
 
+/**
+ * Adds one demo task for testing the board. Every call adds it again.
+ * @returns {Promise<Task>} The saved demo task.
+ */
+async function addDemoTask() {
+    return await addTask({
+        title: 'CSS Architecture Planning',
+        description: 'Define CSS naming conventions and structure.',
+        dueDate: getDateInDays(DEMO_DUE_IN_DAYS),
+        priority: TASK_PRIORITY.urgent,
+        category: TASK_CATEGORY.technical,
+        assignedTo: await getDemoAssignedIds(),
+        subtasks: [
+            { title: 'Establish CSS Methodology', done: true },
+            { title: 'Setup Base Styles', done: true }
+        ]
+    });
+}
+
+
+/**
+ * Returns the ids of the first users for the demo task.
+ * Until contacts exist, users are assigned instead (needs userData.js).
+ * @returns {Promise<string[]>} The ids of the assigned users.
+ */
+async function getDemoAssignedIds() {
+    const users = await loadUsers();
+    const ids = [];
+    for (let i = 0; i < users.length && i < DEMO_ASSIGNED_COUNT; i++) {
+        ids.push(users[i].id);
+    }
+    return ids;
+}
+
+
+/**
+ * Returns the date in a number of days from today as "YYYY-MM-DD".
+ * @param {number} days - How many days from today.
+ * @returns {string} The date, e.g. "2026-11-30".
+ */
+function getDateInDays(days) {
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return date.getFullYear() + '-' + month + '-' + day;
+}
