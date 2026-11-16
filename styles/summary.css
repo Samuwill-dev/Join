@@ -42,7 +42,7 @@
 .summary-buttons {
   display: flex;
   flex-direction: column;
-  width: 1025px;
+  width: 560px;
   height: 562px;
   gap: 28px;
 }
@@ -178,4 +178,32 @@
   align-items: flex-start;
   gap: 13px;
   font-size: 21px;
+}
+
+.summary-section {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 1025px;
+  height: 562px;
+}
+
+.summary-section-extra {
+  width: 385px;
+  height: 136px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: end;
+  gap: 3px;
+  font-size: 47px;
+  color: #2A3647;
+} 
+
+.summary-section-extra-content {
+  font-size: 24px;
+  font-weight: 400;
+  width: 385px;
+  height: 77px;
+  color:#124658;
 }
