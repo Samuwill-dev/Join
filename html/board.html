@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="../styles/components.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/userData.js"></script>
+    <script src="../js/taskData.js"></script>
+    <script src="../js/board.js"></script>
 </head>
 
 <body class="app-layout" onload="requireLogin(); includeHTML()">
@@ -29,7 +33,7 @@
                     <input class="search-task-input" id="search-input" type="text" placeholder="Find Task"/>
                     <img class="search-task-icon" src="../assets/icons/search-icon.svg" alt="start searching">
                 </label>
-                <button class="btn btn-primary">Add task +</button>
+                <button class="btn btn-primary" onclick="addTaskTest()">Add task +</button>
             </div>
         </section>
         <section class="board">
