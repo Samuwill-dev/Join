@@ -1,0 +1,17 @@
+.add-task-form {
+  width: 976px;
+  height: 545px;
+  margin-top: 56px;
+  margin-left: 117px;
+  margin-right: 96px;
+  gap: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+    width: 440px;
+    height: 376px;
+}
+
+
