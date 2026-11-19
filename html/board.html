@@ -29,7 +29,7 @@
             <h1>Board</h1>
             <div>
                 <label class="search-task" for="search-input">
-                    <input class="search-task-input" id="search-input" type="text" placeholder="Find Task"/>
+                    <input class="search-task-input" id="search-input" type="text" placeholder="Find Task" />
                     <img class="search-task-icon" src="../assets/icons/search-icon.svg" alt="start searching">
                 </label>
                 <button class="btn btn-primary" onclick="addTaskTest()">Add task +</button>
@@ -42,7 +42,26 @@
                     <img class="board-plus-icon" src="../assets/icons/plus-icon.svg" alt="add task button">
                 </div>
                 <div class="task-section">
-                    <!-- tasks -->
+                    <div class="task">
+                        <span class="category-tag">User Story</span>
+                        <h3>Kochwelt Page & Recipe Recommender</h3>
+                        <p class="task-description">Build start page with recipe recommendation...</p>
+                        <div class="subtask-section">
+                            <div class="progress-bar" role="progressbar" aria-label="Subtask progress" aria-valuenow="1"
+                                aria-valuemin="0" aria-valuemax="2">
+                                <div class="progress"></div>
+                            </div>
+                            <span>1/2 Subtasks</span>
+                        </div>
+                        <div class="task-footer">
+                            <div class="assigned-users" aria-label="Assigned users">
+                                <span class="user-avatar avatar-orange" aria-label="Alex Meyer">AM</span>
+                                <span class="user-avatar avatar-teal" aria-label="Emma Müller">EM</span>
+                                <span class="user-avatar avatar-purple" aria-label="Max Becker">MB</span>
+                            </div>
+                            <span class="task-priority-icon" role="img" aria-label="Medium priority"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="columns">
