@@ -10,8 +10,43 @@
 }
 
 .form-section {
-    width: 440px;
-    height: 376px;
+  width: 440px;
+  height: 376px;
+  position: relative;
 }
 
+.form-group-title {
+  position: relative;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
 
+.form-group-title-textarea {
+  position: relative;
+  top: 25px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  height: 168px;
+}
+
+.form-group-textarea {
+  width: 440px;
+  height: 100px;
+}
+
+.form-group-title-date {
+  position: relative;
+  top: 20px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  height: 96px;
+}
+.form-group-text {
+  width: 440px;
+  height: 64px;
+}
