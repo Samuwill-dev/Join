@@ -36,35 +36,100 @@
     <main>
       <section class="add-task-form">
         <h1>Add Task</h1>
-        <div class="form-section">
-
-
-          <div class="form-group-title">
-            Title
-            <div class="form-group">
-              <input  class="form-group-text" type="text" id="taskTitle" name="taskTitle" required />
+        <section class="form-section">
+          <section class="form-section-left">
+            <div class="form-group-title">
+              Title
+              <div class="form-group">
+                <input
+                  class="form-group-text"
+                  type="text"
+                  id="taskTitle"
+                  name="taskTitle"
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-
-          <div class="form-group-title-textarea">
-            Description
-            <div class="form-group">
-              <textarea class="form-group-textarea"
-                id="taskDescription"
-                name="taskDescription"
-                required
-              ></textarea>
+            <div class="form-group-title-textarea">
+              Description
+              <div class="form-group">
+                <textarea
+                  class="form-group-textarea"
+                  id="taskDescription"
+                  name="taskDescription"
+                  required
+                ></textarea>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group-title-date">
-            Due Date
-            <div class="form-group">
-              <input  class="form-group-text" type="date" id="taskDueDate" name="taskDueDate" required />
+            <div class="form-group-title-date">
+              Due Date
+              <div class="form-group">
+                <input
+                  class="form-group-text"
+                  type="date"
+                  id="taskDueDate"
+                  name="taskDueDate"
+                  required
+                />
+              </div>
             </div>
-          </div>
-        </div>
+          </section>
+
+          <div class="separator-bottom"></div>
+          <section class="form-section-right">
+            <section class="form-group-title">
+              Priority
+              <div class="form-group-priority">
+                <button class="priority-button" type="button" id="taskPriorityLow">Urgent</button>
+                <button class="priority-button" type="button" id="taskPriorityMedium">Medium</button>
+                <button  class="priority-button" type="button" id="taskPriorityHigh">Low</button>
+              </div>
+            </section>
+
+            <section class="form-group-assigned">
+              Assigned to
+              <div class="form-group-assigned">
+                <select
+                  class="form-group-text"
+                  id="taskAssigned"
+                  name="taskAssigned"
+                  required
+                >
+                  <option value="">Select contacts to assign</option>
+                </select>
+              </div>
+            </section>
+
+            <section class="form-group-status">
+              Category
+              <div class="form-group-status">
+                <select
+                  class="form-group-text"
+                  id="taskCategory"
+                  name="taskCategory"
+                  required
+                >
+                  <option value="">Select category</option>
+                </select>
+              </div>
+            </section>
+
+            <section class="form-group-deadline">
+              Subtask
+              <div class="form-group-deadline">
+                <input
+                  class="form-group-text"
+                  type="text"
+                  id="taskSubtask"
+                  name="taskSubtask"
+                  required
+                />
+              </div>
+            </section>
+          </section>
+        </section>
       </section>
     </main>
   </body>

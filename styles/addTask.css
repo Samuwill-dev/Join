@@ -4,15 +4,15 @@
   margin-top: 56px;
   margin-left: 117px;
   margin-right: 96px;
-  gap: 48px;
-  display: flex;
-  flex-direction: column;
 }
 
 .form-section {
-  width: 440px;
-  height: 376px;
+  width: 976px;
+  height: 424px;
   position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 48px;
 }
 
 .form-group-title {
@@ -49,4 +49,44 @@
 .form-group-text {
   width: 440px;
   height: 64px;
+}
+
+.separator-bottom {
+  width: 2px;
+  height: 424px;
+  background-color: #686868;
+}
+
+.form-section-left {
+  width: 440px;
+  height: 424px;
+}
+
+.form-section-right {
+  width: 440px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group-title {
+  width: 440px;
+  height: 88px;
+}
+
+.form-group-priority {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.form-group-assigned {
+  width: 440px;
+  height: 88px;
+}
+
+.priority-button {
+  width: 156px;
+  height: 56px;
+  font-size: 20px;
 }
