@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', initBoard);
  * @returns {Promise<void>}
  */
 async function initBoard() {
+    document.querySelector('#search-input')?.addEventListener('input', renderBoard);
     await renderBoard();
 }
 
@@ -55,13 +56,35 @@ function renderColumn(status) {
 }
 
 /**
- * Returns tasks matching a column status, sorted by their stored order.
+ * Returns tasks matching the status and current search, sorted by order.
  * @param {string} status - The status to filter by.
  * @returns {Task[]}
  */
 function getVisibleTasks(status) {
-    return boardTasks.filter(task => (task.status || TASK_STATUS.todo) === status)
+    const query = getSearchQuery();
+    return boardTasks.filter(task =>
+        (task.status || TASK_STATUS.todo) === status && matchesSearch(task, query)
+    )
         .sort((first, second) => getTaskOrder(first) - getTaskOrder(second));
+}
+
+/**
+ * Returns the normalized text currently entered in the search field.
+ * @returns {string}
+ */
+function getSearchQuery() {
+    return document.querySelector('#search-input')?.value.trim().toLowerCase() || '';
+}
+
+/**
+ * Checks whether a task title or description matches the search text.
+ * @param {Task} task - The task to search.
+ * @param {string} query - The normalized search text.
+ * @returns {boolean}
+ */
+function matchesSearch(task, query) {
+    return task.title?.toLowerCase().includes(query) ||
+        task.description?.toLowerCase().includes(query);
 }
 
 /**
@@ -189,7 +212,6 @@ function getInsertionTarget(section, pointerY) {
         const bounds = task.getBoundingClientRect();
         if (pointerY < bounds.top + bounds.height / 2) return task;
     }
-
     return null;
 }
 
