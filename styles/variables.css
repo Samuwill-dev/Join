@@ -26,6 +26,7 @@
     --color-contact-email: rgb(0, 124, 238);
     --color-contact-hover-top: rgb(249, 249, 249);
     --color-contact-hover-bottom: rgb(240, 240, 240);
+    --color-contact-avatar-shadow: rgb(0 0 0 / 10%);
 
     /* borders */
     --border-width: 2px;
