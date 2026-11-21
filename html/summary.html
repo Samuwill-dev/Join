@@ -59,7 +59,7 @@
                   alt="To-Do Icon"
                 />
               </div>
-              <div class="summary-to-do-text">
+              <div class="summary-to-do-text" id="summaryToDoCount">
                 1
                 <div class="summary-to-do-label">To-Do</div>
               </div>
@@ -72,7 +72,7 @@
                     alt="Done Icon"
                   />
                 </div>
-                <div class="summary-to-do-text">
+                <div class="summary-to-do-text" id="summaryDoneCount">
                   1
                   <div class="summary-to-do-label">Done</div>
                 </div>
@@ -83,7 +83,7 @@
               <button class="summary-metrics" onclick="gotoBoard()">
                 <div class="summary-metrics-text">
                   <img src="../assets/icons/urgent.svg" alt="Urgent Icon" />
-                  <div class="summary-to-do-text">
+                  <div class="summary-to-do-text" id="summaryUrgentCount">
                     1
                     <div class="summary-to-do-label">Urgent</div>
                   </div>
@@ -98,20 +98,20 @@
 
             <div class="summary-buttons-boards">
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text">
+                <div class="summary-to-do-text" id="summaryTasksInBoardsCount">
                   5
                   <div class="summary-to-do-label">Tasks in Boards</div>
                 </div>
               </button>
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text">
+                <div class="summary-to-do-text" id="summaryTasksInProgressCount">
                   2
                   <div class="summary-to-do-label">Tasks In Progress</div>
                 </div>
               </button>
 
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text">
+                <div class="summary-to-do-text" id="summaryAwaitingFeedbackCount">
                   2
                   <div class="summary-to-do-label">Awaiting Feedback</div>
                 </div>
@@ -120,7 +120,7 @@
             </div>
           </div>
          
-        </div>
+         
          
           <section class="summary-section-extra">
             good morning,

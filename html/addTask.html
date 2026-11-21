@@ -35,19 +35,17 @@
     ></div>
     <main>
       <section class="add-task-form">
+
+        <section class="form-section-header">
         <h1>Add Task</h1>
-        <section class="form-section">
+        </section>
+
+
+        <form class="form-section">
           <section class="form-section-left">
             <div class="form-group-title">
               Title
-              <div class="form-group">
-                <input
-                  class="form-group-text"
-                  type="text"
-                  id="taskTitle"
-                  name="taskTitle"
-                  required
-                />
+              <div class="form-group"> <input class="form-group-text" type="text" placeholder="Enter task title" id="taskTitle"name="taskTitle" required />
               </div>
             </div>
 
@@ -56,7 +54,7 @@
               <div class="form-group">
                 <textarea
                   class="form-group-textarea"
-                  id="taskDescription"
+                  id="taskDescription" placeholder="Enter task description"
                   name="taskDescription"
                   required
                 ></textarea>
@@ -66,15 +64,10 @@
             <div class="form-group-title-date">
               Due Date
               <div class="form-group">
-                <input
-                  class="form-group-text"
-                  type="date"
-                  id="taskDueDate"
-                  name="taskDueDate"
-                  required
-                />
+                <input class="form-group-text" type="date" id="taskDueDate" name="taskDueDate" required/>
               </div>
             </div>
+             <span class="error-msg" id="loginEmailError" aria-live="polite"></span>
           </section>
 
           <div class="separator-bottom"></div>
@@ -90,9 +83,9 @@
 
             <section class="form-group-assigned">
               Assigned to
-              <div class="form-group-assigned">
+              <div class="form-group-assigned-select">
                 <select
-                  class="form-group-text"
+                  class="form-group-text-assigned"
                   id="taskAssigned"
                   name="taskAssigned"
                   required
@@ -105,31 +98,19 @@
             <section class="form-group-status">
               Category
               <div class="form-group-status">
-                <select
-                  class="form-group-text"
-                  id="taskCategory"
-                  name="taskCategory"
-                  required
-                >
-                  <option value="">Select category</option>
+                <select class="form-group-text-assigned" id="taskCategory" name="taskCategory" required >
+                  <option value="">Select category task category</option>
                 </select>
               </div>
             </section>
 
             <section class="form-group-deadline">
-              Subtask
-              <div class="form-group-deadline">
-                <input
-                  class="form-group-text"
-                  type="text"
-                  id="taskSubtask"
-                  name="taskSubtask"
-                  required
-                />
+              Subtask <div class="form-group-deadline">
+                <input class="form-group-text-assigned" type="text" placeholder="Enter subtask" id="taskSubtask" name="taskSubtask" required/>
               </div>
             </section>
           </section>
-        </section>
+        </form>
       </section>
     </main>
   </body>
