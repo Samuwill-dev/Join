@@ -191,3 +191,89 @@ header h4 {
 .user-menu button:hover {
     background-color: var(--color-menu-hover);
 }
+
+/* only visible on mobile */
+
+.header-logo,
+.user-menu .user-menu-help {
+    display: none;
+}
+
+
+/* mobile: sidebar becomes a bar at the bottom, header gets smaller */
+
+@media (max-width: 1024px) {
+    body.app-layout {
+        padding-left: 0;
+        padding-bottom: 80px;
+    }
+
+    body.app-layout main {
+        min-height: calc(100vh - 160px);
+    }
+
+    body.app-layout aside {
+        top: auto;
+    }
+
+    aside {
+        flex-direction: row;
+        width: 100%;
+        height: 80px;
+    }
+
+    .logo-wrap,
+    .legal-links {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        width: 80px;
+        height: 76px;
+        padding: 0;
+        border-radius: 16px;
+        font-size: 0.875rem;
+    }
+
+    .nav-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    header {
+        height: 80px;
+        padding: 0 16px;
+    }
+
+    header h4,
+    .help-link {
+        display: none;
+    }
+
+    .header-logo {
+        display: block;
+        height: 40px;
+    }
+
+    .user-profile {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+        font-size: 0.875rem;
+    }
+
+    .user-menu .user-menu-help {
+        display: flex;
+    }
+}
