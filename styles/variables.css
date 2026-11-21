@@ -22,6 +22,7 @@
 
     /* contacts colors */
     --color-contact-list-shadow: rgb(0 0 0 / 8%);
+    --color-divider: rgb(209, 209, 209);
 
     /* borders */
     --border-width: 2px;
