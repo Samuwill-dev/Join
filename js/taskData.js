@@ -23,6 +23,7 @@ const DEMO_ASSIGNED_COUNT = 2; // The demo task is assigned to the first 2 users
  * @property {string} status - A value from TASK_STATUS.
  * @property {string[]} assignedTo - The ids of the assigned contacts.
  * @property {Subtask[]} subtasks - The subtasks of the task.
+ * @property {number} [order] - The position of the task in its column, set by drag and drop.
  */
 
 
