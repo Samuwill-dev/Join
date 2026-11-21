@@ -14,15 +14,18 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/legal.css">
     <link rel="stylesheet" href="../styles/contacts.css">
+    <link rel="stylesheet" href="../styles/contactOverlay.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../js/formHelpers.js"></script>
+    <script src="../js/contactOverlay.js"></script>
 </head>
 
-<body class="app-layout" onload="requireLogin(); includeHTML()">
+<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="contacts"></div>
     <main class="contacts-page">
         <section class="contact-list">
-            <button class="btn btn-primary contact-add-btn">
+            <button class="btn btn-primary contact-add-btn" id="contactAddBtn">
                 Add new contact
                 <img src="../assets/icons/personAdd.svg" alt="">
             </button>
@@ -66,7 +69,7 @@
                     <div class="contact-details-title">
                         <h2>Marven J</h2>
                         <div class="contact-actions">
-                            <button class="contact-action">
+                            <button class="contact-action" id="contactEditBtn">
                                 <span class="contact-action-icon icon-edit"></span>
                                 Edit
                             </button>
@@ -85,8 +88,67 @@
                     <p class="contact-phone">+49 2222 8891 00 2</p>
                 </div>
             </div>
+            <div class="popup contact-popup" id="contactPopup" role="status">Contact successfully created</div>
         </section>
     </main>
+
+    <dialog id="contactOverlay" class="contact-overlay">
+        <div class="overlay-aside">
+            <img class="overlay-logo" src="../assets/icons/logo.svg" alt="Join logo">
+            <h2 id="overlayTitle">Add contact</h2>
+            <p id="overlaySubtitle">Tasks are better with a team!</p>
+            <div class="overlay-line"></div>
+        </div>
+        <div class="overlay-main">
+            <button class="overlay-close" id="overlayCloseBtn" aria-label="Close">
+                <span class="overlay-close-icon"></span>
+            </button>
+            <div class="overlay-avatar" id="overlayAvatar">
+                <img id="overlayAvatarPlaceholder" src="../assets/icons/avatarPlaceholder.svg" alt="">
+                <span class="d-none" id="overlayAvatarInitials"></span>
+            </div>
+            <form class="overlay-form" id="contactForm" novalidate>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactName" type="text" placeholder="Name" aria-label="Name" autocomplete="name" autofocus>
+                        <img src="../assets/icons/person.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactNameError" aria-live="polite"></span>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactEmail" type="text" placeholder="Email" aria-label="Email" autocomplete="email">
+                        <img src="../assets/icons/loginMail.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactEmailError" aria-live="polite"></span>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactPhone" type="tel" placeholder="Phone" aria-label="Phone" autocomplete="tel">
+                        <img src="../assets/icons/call.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactPhoneError" aria-live="polite"></span>
+                </div>
+                <div class="overlay-buttons" id="overlayAddButtons">
+                    <button class="btn btn-secondary overlay-cancel" id="overlayCancelBtn" type="button">
+                        Cancel
+                        <span class="overlay-cancel-icon"></span>
+                    </button>
+                    <button class="btn btn-primary overlay-submit" type="submit">
+                        Create contact
+                        <img src="../assets/icons/check.svg" alt="">
+                    </button>
+                </div>
+                <div class="overlay-buttons d-none" id="overlayEditButtons">
+                    <button class="btn btn-secondary overlay-cancel" id="overlayDeleteBtn" type="button">Delete</button>
+                    <button class="btn btn-primary overlay-submit" type="submit">
+                        Save
+                        <img src="../assets/icons/check.svg" alt="">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 </body>
 
 </html>

@@ -27,6 +27,8 @@
     --color-contact-hover-top: rgb(249, 249, 249);
     --color-contact-hover-bottom: rgb(240, 240, 240);
     --color-contact-avatar-shadow: rgb(0 0 0 / 10%);
+    --color-overlay-backdrop: rgb(0 0 0 / 30%);
+    --color-close-hover: rgb(238, 238, 238);
 
     /* borders */
     --border-width: 2px;
