@@ -2,13 +2,20 @@ const CONTACT_FIELDS = ['contactName', 'contactEmail', 'contactPhone'];
 const OVERLAY_ANIMATION_TIME = 400; // same as the transition in contactOverlay.css
 const PHONE_PATTERN = /^\+?\d[\d ]{4,}\d$/;
 
+// Only for testing the edit overlay. The contact logic passes the selected contact instead.
+const TEST_CONTACT = { id: 'test', name: 'Marven J', email: 'marven@test.de', phone: '+49 2222 8891 00 2', color: '#FF7A00' };
+
+let editContactId = null;
+
 
 /**
  * Sets up the contact overlay: open and close buttons, backdrop, Esc key and form.
  */
 function initContactOverlay() {
     const overlay = document.getElementById('contactOverlay');
-    document.getElementById('contactAddBtn').addEventListener('click', openContactOverlay);
+    document.getElementById('contactAddBtn').addEventListener('click', openAddContactOverlay);
+    document.getElementById('contactEditBtn').addEventListener('click', () => openEditContactOverlay(TEST_CONTACT));
+    document.getElementById('overlayDeleteBtn').addEventListener('click', () => deleteContactFromOverlay(editContactId));
     document.getElementById('overlayCloseBtn').addEventListener('click', closeContactOverlay);
     document.getElementById('overlayCancelBtn').addEventListener('click', closeContactOverlay);
     overlay.addEventListener('click', closeOnBackdropClick);
@@ -19,13 +26,83 @@ function initContactOverlay() {
 
 
 /**
- * Opens the contact overlay with an empty form and lets it slide in.
+ * Opens the overlay to add a new contact, with an empty form.
  */
-function openContactOverlay() {
-    const overlay = document.getElementById('contactOverlay');
+function openAddContactOverlay() {
+    editContactId = null;
     resetContactForm();
+    setOverlayMode(false);
+    setOverlayAvatar(null);
+    showContactOverlay();
+}
+
+
+/**
+ * Opens the overlay to edit a contact. The form is filled with its data.
+ * @param {{id: string, name: string, email: string, phone: string, color: string}} contact - The contact to edit.
+ */
+function openEditContactOverlay(contact) {
+    editContactId = contact.id;
+    resetContactForm();
+    fillContactForm(contact);
+    setOverlayMode(true);
+    setOverlayAvatar(contact);
+    showContactOverlay();
+}
+
+
+/**
+ * Opens the dialog and lets it slide in.
+ */
+function showContactOverlay() {
+    const overlay = document.getElementById('contactOverlay');
     overlay.showModal();
     requestAnimationFrame(() => overlay.classList.add('overlay-visible'));
+}
+
+
+/**
+ * Switches the texts and buttons of the overlay between "add" and "edit".
+ * @param {boolean} isEdit - True for the edit mode, false for the add mode.
+ */
+function setOverlayMode(isEdit) {
+    let title = 'Add contact';
+    if (isEdit) title = 'Edit contact';
+    document.getElementById('overlayTitle').textContent = title;
+    document.getElementById('overlaySubtitle').classList.toggle('d-none', isEdit);
+    document.getElementById('overlayAddButtons').classList.toggle('d-none', isEdit);
+    document.getElementById('overlayEditButtons').classList.toggle('d-none', !isEdit);
+}
+
+
+/**
+ * Shows the initials in the contact color, or the grey placeholder if there is no contact.
+ * @param {{name: string, color: string}|null} contact - The contact, or null for a new contact.
+ */
+function setOverlayAvatar(contact) {
+    const avatar = document.getElementById('overlayAvatar');
+    const initials = document.getElementById('overlayAvatarInitials');
+    const hasContact = contact !== null;
+    avatar.style.backgroundColor = '';
+    initials.textContent = '';
+    if (hasContact) {
+        avatar.style.backgroundColor = contact.color;
+        initials.textContent = getInitials(contact.name);
+    }
+    initials.classList.toggle('d-none', !hasContact);
+    document.getElementById('overlayAvatarPlaceholder').classList.toggle('d-none', hasContact);
+}
+
+
+/**
+ * Puts the data of a contact into the form fields.
+ * @param {{name: string, email: string, phone: string}} contact - The contact to show.
+ */
+function fillContactForm(contact) {
+    document.getElementById('contactName').value = contact.name;
+    document.getElementById('contactEmail').value = contact.email;
+    document.getElementById('contactPhone').value = '';
+    if (contact.phone) document.getElementById('contactPhone').value = contact.phone;
 }
 
 
@@ -77,7 +154,11 @@ function handleContactSubmit(event) {
     event.preventDefault();
     const values = getContactValues();
     if (!validateContact(values)) return;
-    saveContactFromForm(values);
+    if (editContactId) {
+        updateContactFromForm(editContactId, values);
+    } else {
+        saveContactFromForm(values);
+    }
 }
 
 
@@ -153,10 +234,32 @@ function getContactPhoneError(phone) {
 
 
 /**
- * Hands the checked values over to the contact logic and closes the overlay.
+ * Hands the checked values over to the contact logic, closes the overlay and shows the success popup.
  * The contact logic adds the saving here, e.g. with a function from contactData.js.
  * @param {{name: string, email: string, phone: string}} values - The checked values.
  */
 function saveContactFromForm(values) {
+    closeContactOverlay();
+    setTimeout(() => showPopup('contactPopup', POPUP_DURATION), OVERLAY_ANIMATION_TIME);
+}
+
+
+/**
+ * Hands the changed values of a contact over to the contact logic and closes the overlay.
+ * The contact logic adds the saving here, e.g. with a function from contactData.js.
+ * @param {string} id - The id of the edited contact.
+ * @param {{name: string, email: string, phone: string}} values - The checked values.
+ */
+function updateContactFromForm(id, values) {
+    closeContactOverlay();
+}
+
+
+/**
+ * Hands the contact to delete over to the contact logic and closes the overlay.
+ * The contact logic adds the deleting here, e.g. with a function from contactData.js.
+ * @param {string} id - The id of the contact to delete.
+ */
+function deleteContactFromOverlay(id) {
     closeContactOverlay();
 }

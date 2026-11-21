@@ -114,6 +114,9 @@
     border-radius: 50%;
     box-shadow: 0 0 4px var(--color-contact-avatar-shadow);
     background-color: var(--color-divider);
+    color: var(--color-white);
+    font-size: 47px;
+    font-weight: 500;
 }
 
 /* form */
