@@ -20,6 +20,9 @@
     --color-board-empty-shadow: rgb(0 0 0 / 8%);
     --color-board-task-shadow: rgb(0 0 0 / 10%);
 
+    /* contacts colors */
+    --color-contact-list-shadow: rgb(0 0 0 / 8%);
+
     /* borders */
     --border-width: 2px;
     --border: var(--border-width) solid var(--sidebar-bg);

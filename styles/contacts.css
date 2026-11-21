@@ -1,0 +1,44 @@
+/* page layout */
+
+.contacts-page {
+    display: flex;
+    height: calc(100vh - 90px);
+}
+
+.contact-list {
+    width: 424px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    background-color: var(--color-white);
+    box-shadow: 4px 0 6px var(--color-contact-list-shadow);
+}
+
+.contact-content {
+    flex: 1;
+    padding: 109px 80px 0;
+}
+
+/* headline */
+
+.contacts-headline {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.contacts-headline h1 {
+    margin: 0;
+    font-size: 61px;
+    font-weight: 700;
+}
+
+.contacts-headline-line {
+    width: 3px;
+    height: 59px;
+    background-color: var(--color-blue);
+}
+
+.contacts-headline p {
+    font-size: 27px;
+    color: var(--sidebar-bg);
+}
