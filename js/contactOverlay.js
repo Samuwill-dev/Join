@@ -2,9 +2,6 @@ const CONTACT_FIELDS = ['contactName', 'contactEmail', 'contactPhone'];
 const OVERLAY_ANIMATION_TIME = 400; // same as the transition in contactOverlay.css
 const PHONE_PATTERN = /^\+?\d[\d ]{4,}\d$/;
 
-// Only for testing the edit overlay. The contact logic passes the selected contact instead.
-const TEST_CONTACT = { id: 'test', name: 'Marven J', email: 'marven@test.de', phone: '+49 2222 8891 00 2', color: '#FF7A00' };
-
 let editContactId = null;
 
 
@@ -14,7 +11,6 @@ let editContactId = null;
 function initContactOverlay() {
     const overlay = document.getElementById('contactOverlay');
     document.getElementById('contactAddBtn').addEventListener('click', openAddContactOverlay);
-    document.getElementById('contactEditBtn').addEventListener('click', () => openEditContactOverlay(TEST_CONTACT));
     document.getElementById('overlayDeleteBtn').addEventListener('click', () => deleteContactFromOverlay(editContactId));
     document.getElementById('overlayCloseBtn').addEventListener('click', closeContactOverlay);
     document.getElementById('overlayCancelBtn').addEventListener('click', closeContactOverlay);

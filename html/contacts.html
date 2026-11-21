@@ -18,6 +18,7 @@
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
     <script src="../js/formHelpers.js"></script>
+    <script src="../js/contactTemplates.js"></script>
     <script src="../js/contactOverlay.js"></script>
 </head>
 
@@ -29,32 +30,7 @@
                 Add new contact
                 <img src="../assets/icons/personAdd.svg" alt="">
             </button>
-            <div id="contactList">
-                <div class="contact-letter">A</div>
-                <button class="contact-item">
-                    <span class="contact-avatar" style="background-color: #29ABE2">AX</span>
-                    <span class="contact-info">
-                        <span class="contact-name">Alexander X</span>
-                        <span class="contact-email">alexander@test.de</span>
-                    </span>
-                </button>
-                <div class="contact-letter">M</div>
-                <button class="contact-item active">
-                    <span class="contact-avatar" style="background-color: #FF7A00">MJ</span>
-                    <span class="contact-info">
-                        <span class="contact-name">Marven J</span>
-                        <span class="contact-email">marven@test.de</span>
-                    </span>
-                </button>
-                <div class="contact-letter">S</div>
-                <button class="contact-item">
-                    <span class="contact-avatar" style="background-color: #9327FF">SX</span>
-                    <span class="contact-info">
-                        <span class="contact-name">Samuel X</span>
-                        <span class="contact-email">samuel@test.de</span>
-                    </span>
-                </button>
-            </div>
+            <div id="contactList"></div>
         </section>
 
         <section class="contact-content">
@@ -63,31 +39,7 @@
                 <div class="contacts-headline-line"></div>
                 <p>Better with a team</p>
             </div>
-            <div id="contactDetails" class="contact-details">
-                <div class="contact-details-head">
-                    <span class="contact-details-avatar" style="background-color: #FF7A00">MJ</span>
-                    <div class="contact-details-title">
-                        <h2>Marven J</h2>
-                        <div class="contact-actions">
-                            <button class="contact-action" id="contactEditBtn">
-                                <span class="contact-action-icon icon-edit"></span>
-                                Edit
-                            </button>
-                            <button class="contact-action">
-                                <span class="contact-action-icon icon-delete"></span>
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <h3>Contact Information</h3>
-                <div class="contact-details-info">
-                    <h4>Email</h4>
-                    <a class="contact-email" href="mailto:marven@test.de">marven@test.de</a>
-                    <h4>Phone</h4>
-                    <p class="contact-phone">+49 2222 8891 00 2</p>
-                </div>
-            </div>
+            <div id="contactDetails" class="contact-details"></div>
             <div class="popup contact-popup" id="contactPopup" role="status">Contact successfully created</div>
         </section>
     </main>
