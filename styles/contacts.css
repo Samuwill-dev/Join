@@ -243,3 +243,35 @@
 .contact-popup.popup-visible {
     transform: translateX(0);
 }
+
+
+@media (max-width: 1024px) {
+    .contacts-page {
+        height: calc(100vh - 160px);
+    }
+
+    .contact-list {
+        width: 100%;
+        padding: 16px 24px 96px;
+        box-shadow: none;
+    }
+
+    .contact-content {
+        display: none;
+    }
+
+    .contact-add-btn {
+        position: fixed;
+        right: 16px;
+        bottom: 112px;
+        z-index: 1;
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .contact-add-text {
+        display: none;
+    }
+}

@@ -192,7 +192,6 @@ header h4 {
     background-color: var(--color-menu-hover);
 }
 
-/* only visible on mobile */
 
 .header-logo,
 .user-menu .user-menu-help {
@@ -200,7 +199,7 @@ header h4 {
 }
 
 
-/* mobile: sidebar becomes a bar at the bottom, header gets smaller */
+
 
 @media (max-width: 1024px) {
     body.app-layout {
