@@ -10,6 +10,12 @@
     border: none;
     border-radius: 30px;
     overflow: hidden;
+    transform: translateX(100vw);
+    transition: transform 400ms ease-in-out;
+}
+
+.contact-overlay.overlay-visible {
+    transform: translateX(0);
 }
 
 .contact-overlay[open] {

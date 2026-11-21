@@ -17,13 +17,15 @@
     <link rel="stylesheet" href="../styles/contactOverlay.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../js/formHelpers.js"></script>
+    <script src="../js/contactOverlay.js"></script>
 </head>
 
-<body class="app-layout" onload="requireLogin(); includeHTML()">
+<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="contacts"></div>
     <main class="contacts-page">
         <section class="contact-list">
-            <button class="btn btn-primary contact-add-btn">
+            <button class="btn btn-primary contact-add-btn" id="contactAddBtn">
                 Add new contact
                 <img src="../assets/icons/personAdd.svg" alt="">
             </button>
@@ -97,13 +99,13 @@
             <div class="overlay-line"></div>
         </div>
         <div class="overlay-main">
-            <button class="overlay-close" aria-label="Close">
+            <button class="overlay-close" id="overlayCloseBtn" aria-label="Close">
                 <span class="overlay-close-icon"></span>
             </button>
             <div class="overlay-avatar">
                 <img src="../assets/icons/avatarPlaceholder.svg" alt="">
             </div>
-            <form class="overlay-form" novalidate>
+            <form class="overlay-form" id="contactForm" novalidate>
                 <div class="input-group">
                     <div class="input-wrap">
                         <input id="contactName" type="text" placeholder="Name" aria-label="Name" autocomplete="name" autofocus>
@@ -126,7 +128,7 @@
                     <span class="error-msg" id="contactPhoneError" aria-live="polite"></span>
                 </div>
                 <div class="overlay-buttons">
-                    <button class="btn btn-secondary overlay-cancel" type="button">
+                    <button class="btn btn-secondary overlay-cancel" id="overlayCancelBtn" type="button">
                         Cancel
                         <span class="overlay-cancel-icon"></span>
                     </button>
