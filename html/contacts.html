@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/legal.css">
     <link rel="stylesheet" href="../styles/contacts.css">
+    <link rel="stylesheet" href="../styles/contactOverlay.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
 </head>
@@ -87,6 +88,56 @@
             </div>
         </section>
     </main>
+
+    <dialog id="contactOverlay" class="contact-overlay">
+        <div class="overlay-aside">
+            <img class="overlay-logo" src="../assets/icons/logo.svg" alt="Join logo">
+            <h2>Add contact</h2>
+            <p>Tasks are better with a team!</p>
+            <div class="overlay-line"></div>
+        </div>
+        <div class="overlay-main">
+            <button class="overlay-close" aria-label="Close">
+                <span class="overlay-close-icon"></span>
+            </button>
+            <div class="overlay-avatar">
+                <img src="../assets/icons/avatarPlaceholder.svg" alt="">
+            </div>
+            <form class="overlay-form" novalidate>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactName" type="text" placeholder="Name" aria-label="Name" autocomplete="name" autofocus>
+                        <img src="../assets/icons/person.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactNameError" aria-live="polite"></span>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactEmail" type="text" placeholder="Email" aria-label="Email" autocomplete="email">
+                        <img src="../assets/icons/loginMail.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactEmailError" aria-live="polite"></span>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="contactPhone" type="tel" placeholder="Phone" aria-label="Phone" autocomplete="tel">
+                        <img src="../assets/icons/call.svg" alt="">
+                    </div>
+                    <span class="error-msg" id="contactPhoneError" aria-live="polite"></span>
+                </div>
+                <div class="overlay-buttons">
+                    <button class="btn btn-secondary overlay-cancel" type="button">
+                        Cancel
+                        <span class="overlay-cancel-icon"></span>
+                    </button>
+                    <button class="btn btn-primary overlay-submit" type="submit">
+                        Create contact
+                        <img src="../assets/icons/check.svg" alt="">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 </body>
 
 </html>
