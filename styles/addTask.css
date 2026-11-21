@@ -6,6 +6,11 @@
   margin-right: 96px;
 }
 
+.add-task-main {
+  width: 1208px;
+  height: 849px;
+}
+
 .form-section {
   width: 976px;
   height: 424px;
@@ -97,6 +102,13 @@
   font-size: 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  background-color: #FFFFFF;
+  filter: drop-shadow(0 0 4px #00000066);
+  cursor: pointer;
+}
+
+.priority-button:hover {
+  box-shadow: 0px 5px 10px  #00000066 ;
 }
 
 .form-group-status {
@@ -118,5 +130,9 @@
   width: 440px;
   height: 48px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #686868;
+}
+
+.form-group-text-assigned:hover {
+  border: none;
 }
