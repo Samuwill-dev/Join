@@ -1,7 +1,6 @@
 const SUMMARY_PAGE = 'html/summary.html';
 const LOGIN_FIELDS = ['loginEmail', 'loginPassword'];
 const SIGNUP_FIELDS = ['signupName', 'signupEmail', 'signupPassword', 'signupConfirm'];
-const TOAST_DURATION = 1500;
 const INTRO_WAIT_TIME = 300;
 const INTRO_MOVE_TIME = 800; // same as the transition in login.css
 const BIG_LOGO_WIDTH = 274;
@@ -262,17 +261,17 @@ async function createAccount(values) {
 
 
 /**
- * Shows the success toast and then goes back to the login
+ * Shows the success popup and then goes back to the login
  * with the new email already filled in.
  * @param {string} email - The email of the new user.
  */
 function finishSignup(email) {
-    showToast('signupToast', TOAST_DURATION);
+    showPopup('signupPopup', POPUP_DURATION);
     setTimeout(() => {
         resetSignupForm();
         document.getElementById('loginEmail').value = email;
         showLogin();
-    }, TOAST_DURATION);
+    }, POPUP_DURATION);
 }
 
 

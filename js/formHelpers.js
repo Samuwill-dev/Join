@@ -1,5 +1,6 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FULL_NAME_PATTERN = /^\p{L}[\p{L}'-]*( \p{L}[\p{L}'-]*)+$/u;
+const POPUP_DURATION = 1500;
 
 
 /**
@@ -147,12 +148,12 @@ function resetPasswordToggle(inputId) {
 
 
 /**
- * Shows a toast message for a short time.
- * @param {string} toastId - The id of the toast element.
- * @param {number} duration - How long the toast is visible, in milliseconds.
+ * Shows a popup message for a short time.
+ * @param {string} popupId - The id of the popup element.
+ * @param {number} duration - How long the popup is visible, in milliseconds.
  */
-function showToast(toastId, duration) {
-    const toast = document.getElementById(toastId);
-    toast.classList.add('toast-visible');
-    setTimeout(() => toast.classList.remove('toast-visible'), duration);
+function showPopup(popupId, duration) {
+    const popup = document.getElementById(popupId);
+    popup.classList.add('popup-visible');
+    setTimeout(() => popup.classList.remove('popup-visible'), duration);
 }
