@@ -20,11 +20,12 @@
     <script src="../js/formHelpers.js"></script>
     <script src="../js/contactTemplates.js"></script>
     <script src="../js/contactOverlay.js"></script>
+    <script src="../js/contactView.js"></script>
 </head>
 
-<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay()">
+<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay(); initContactView()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="contacts"></div>
-    <main class="contacts-page">
+    <main class="contacts-page" id="contactsPage">
         <section class="contact-list">
             <button class="btn btn-primary contact-add-btn" id="contactAddBtn" aria-label="Add new contact">
                 <span class="contact-add-text">Add new contact</span>
@@ -34,14 +35,21 @@
         </section>
 
         <section class="contact-content">
+            <button class="contact-back-btn" id="contactBackBtn" aria-label="Back to the contact list">
+                <img src="../assets/icons/arrow-left.svg" alt="">
+            </button>
             <div class="contacts-headline">
                 <h1>Contacts</h1>
                 <div class="contacts-headline-line"></div>
                 <p>Better with a team</p>
             </div>
             <div id="contactDetails" class="contact-details"></div>
-            <div class="popup contact-popup" id="contactPopup" role="status">Contact successfully created</div>
+            <button class="btn btn-primary contact-more-btn" id="contactMoreBtn" aria-label="Open contact options" aria-expanded="false">
+                <img src="../assets/icons/moreVert.svg" alt="">
+            </button>
         </section>
+
+        <div class="popup contact-popup" id="contactPopup" role="status">Contact successfully created</div>
     </main>
 
     <dialog id="contactOverlay" class="contact-overlay">
