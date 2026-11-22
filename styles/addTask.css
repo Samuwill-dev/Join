@@ -96,19 +96,65 @@
   gap: 8px;
 }
 
-.priority-button {
+.priority-button-urgent {
   width: 156px;
   height: 56px;
   font-size: 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   filter: drop-shadow(0 0 4px #00000066);
   cursor: pointer;
 }
 
-.priority-button:hover {
-  box-shadow: 0px 5px 10px  #00000066 ;
+.priority-button-urgent:hover {
+  box-shadow: 0px 5px 10px #00000066;
+}
+
+.priority-button-low {
+  width: 156px;
+  height: 56px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 4px #00000066);
+  cursor: pointer;
+}
+
+.priority-button-low:hover {
+  box-shadow: 0px 5px 10px #00000066;
+}
+
+.priority-button-medium {
+  width: 156px;
+  height: 56px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 4px #00000066);
+  cursor: pointer;
+}
+
+.priority-button-medium img {
+  filter: brightness(0) saturate(100%) invert(76%) sepia(76%) saturate(3831%)
+    hue-rotate(2deg) brightness(105%) contrast(105%);
+}
+
+.priority-button-medium:active {
+  background-color: #ffa800;
+  color: #ffffff;
+  filter: none;
+  box-shadow: none;
+}
+
+.priority-button-medium:active img {
+  filter: brightness(0) invert(1);
+}
+
+.priority-button-medium:hover {
+  box-shadow: 0px 5px 10px #00000066;
 }
 
 .form-group-status {
