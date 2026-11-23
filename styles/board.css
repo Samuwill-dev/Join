@@ -1,5 +1,6 @@
-.conntent {
+.content {
     margin: 60px;
+    max-width: calc(1440px - 250px);
 }
 
 .board-header {
@@ -54,14 +55,13 @@
 .columns {
     display: flex;
     flex-direction: column;
-    flex: 1 1 250px;
-    min-width: 0;
     max-width: 320px;
 }
 
 .column-head {
     display: flex;
     justify-content: space-between;
+    max-width: 320px;
     align-items: center;
 }
 
@@ -74,7 +74,6 @@
     flex-direction: column;
     gap: 16px;
     min-height: 80vh;
-    padding: 8px;
     border-radius: 16px;
 }
 
