@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../styles/icons.css" />
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../script.js"></script>
   </head>
 
   <body
@@ -154,7 +155,13 @@
             </section>
           </form>
         </section>
-      </section>
+        <section class="form-section-footer">
+          <span >*This field is required</span>
+          <section class="form-section-footer-buttons">
+          <button type="button" onclick="clearForm()" class="form-section-footer-button">clear</button>
+          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task</button>
+          </section>
+        </section>
     </main>
   </body>
 </html>

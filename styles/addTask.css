@@ -41,6 +41,7 @@
   width: 440px;
   height: 100px;
   border-radius: 10px;
+  border: 1px solid #686868;
 }
 
 .form-group-title-date {
@@ -56,10 +57,11 @@
   width: 440px;
   height: 64px;
   border-radius: 10px;
+  border: 1px solid #686868;
 }
 
 .separator-bottom {
-  width: 2px;
+  width: 1px;
   height: 424px;
   background-color: #686868;
   flex-shrink: 0;
@@ -111,6 +113,17 @@
   box-shadow: 0px 5px 10px #00000066;
 }
 
+.priority-button-urgent:focus {
+  background-color: #FF3D00;
+  color: #ffffff;
+  filter: none;
+  box-shadow: none;
+}
+
+.priority-button-urgent:focus img {
+  filter: brightness(0) invert(1);
+} 
+
 .priority-button-low {
   width: 156px;
   height: 56px;
@@ -124,6 +137,17 @@
 
 .priority-button-low:hover {
   box-shadow: 0px 5px 10px #00000066;
+}
+
+.priority-button-low:focus {
+  background-color: #7AE229;
+  color: #ffffff;
+  filter: none;
+  box-shadow: none;
+}
+
+.priority-button-low:focus img {
+  filter: brightness(0) invert(1);
 }
 
 .priority-button-medium {
@@ -157,6 +181,17 @@
   box-shadow: 0px 5px 10px #00000066;
 }
 
+.priority-button-medium:focus {
+  background-color: #ffa800;
+  color: #ffffff;
+  filter: none;
+  box-shadow: none;
+}
+
+.priority-button-medium:focus img {
+  filter: brightness(0) invert(1);
+}
+
 .form-group-status {
   width: 440px;
   height: 88px;
@@ -181,4 +216,19 @@
 
 .form-group-text-assigned:hover {
   border: none;
+}
+
+.form-section-footer {
+  width: 1093px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-section-footer-buttons {
+  width: 309px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
