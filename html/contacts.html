@@ -18,12 +18,14 @@
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
     <script src="../js/formHelpers.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/contactData.js"></script>
     <script src="../js/contactTemplates.js"></script>
     <script src="../js/contactOverlay.js"></script>
     <script src="../js/contactView.js"></script>
 </head>
 
-<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay(); initContactView()">
+<body class="app-layout" onload="requireLogin(); includeHTML(); initContactOverlay(); initContactView(); refreshContacts()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="contacts"></div>
     <main class="contacts-page" id="contactsPage">
         <section class="contact-list">
@@ -94,7 +96,7 @@
                         Cancel
                         <span class="overlay-cancel-icon"></span>
                     </button>
-                    <button class="btn btn-primary overlay-submit" onclick="createContact()" type="submit">
+                    <button class="btn btn-primary overlay-submit" type="submit">
                         Create contact
                         <img src="../assets/icons/check.svg" alt="">
                     </button>
