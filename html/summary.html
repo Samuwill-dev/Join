@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../styles/legal.css" />
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/taskData.js"></script>
     <script src="../script.js"></script>
   </head>
 
@@ -59,8 +61,8 @@
                   alt="To-Do Icon"
                 />
               </div>
-              <div class="summary-to-do-text" id="summaryToDoCount">
-                1
+              <div class="summary-to-do-text">
+                <span id="summaryToDoCount">1</span>
                 <div class="summary-to-do-label">To-Do</div>
               </div>
             </button>
@@ -72,8 +74,8 @@
                     alt="Done Icon"
                   />
                 </div>
-                <div class="summary-to-do-text" id="summaryDoneCount">
-                  1
+                <div class="summary-to-do-text">
+                  <span id="summaryDoneCount">1</span>
                   <div class="summary-to-do-label">Done</div>
                 </div>
               </button>
@@ -83,14 +85,14 @@
               <button class="summary-metrics" onclick="gotoBoard()">
                 <div class="summary-metrics-text">
                   <img src="../assets/icons/urgent.svg" alt="Urgent Icon" />
-                  <div class="summary-to-do-text" id="summaryUrgentCount">
-                    1
+                  <div class="summary-to-do-text">
+                    <span id="summaryUrgentCount">1</span>
                     <div class="summary-to-do-label">Urgent</div>
                   </div>
                 </div>
                 <div class="separator-vertical"></div>
                 <div class="summary-metrics-content">
-                  October 16, 2022
+                  <span id="summaryDeadline">October 16, 2022</span>
                   <div class="summary-to-do-label">Upcoming Deadline</div>
                 </div>
               </button>
@@ -98,21 +100,21 @@
 
             <div class="summary-buttons-boards">
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text" id="summaryTasksInBoardsCount">
-                  5
+                <div class="summary-to-do-text">
+                  <span id="summaryTasksInBoardsCount">5</span>
                   <div class="summary-to-do-label">Tasks in Boards</div>
                 </div>
               </button>
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text" id="summaryTasksInProgressCount">
-                  2
+                <div class="summary-to-do-text">
+                  <span id="summaryTasksInProgressCount">2</span>
                   <div class="summary-to-do-label">Tasks In Progress</div>
                 </div>
               </button>
 
               <button class="summary-settings" onclick="gotoBoard()">
-                <div class="summary-to-do-text" id="summaryAwaitingFeedbackCount">
-                  2
+                <div class="summary-to-do-text">
+                  <span id="summaryAwaitingFeedbackCount">2</span>
                   <div class="summary-to-do-label">Awaiting Feedback</div>
                 </div>
               </button>
@@ -123,8 +125,8 @@
          
          
           <section class="summary-section-extra">
-            good morning,
-            <div class="summary-section-extra-content">
+            <span id="summaryGreeting">good morning,</span>
+            <div class="summary-section-extra-content" id="summaryUserName">
               Alexander Zerbian
             </div>
           </section>
