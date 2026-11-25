@@ -43,7 +43,8 @@
                     <img class="board-plus-icon" src="../assets/icons/plus-icon.svg" alt="add task button">
                 </div>
                 <div class="task-section" id="todo" data-status="todo"
-                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'todo')"></div>
+                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'todo')">
+                </div>
             </div>
             <div class="columns">
                 <div class="column-head">
@@ -51,7 +52,8 @@
                     <img class="board-plus-icon" src="../assets/icons/plus-icon.svg" alt="add task button">
                 </div>
                 <div class="task-section" id="inProgress" data-status="inProgress"
-                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'inProgress')"></div>
+                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'inProgress')">
+                </div>
             </div>
             <div class="columns">
                 <div class="column-head">
@@ -59,15 +61,54 @@
                     <img class="board-plus-icon" src="../assets/icons/plus-icon.svg" alt="add task button">
                 </div>
                 <div class="task-section" id="awaitFeedback" data-status="awaitFeedback"
-                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'awaitFeedback')"></div>
+                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'awaitFeedback')">
+                </div>
             </div>
             <div class="columns">
                 <div class="column-head">
                     <h2>Done</h2>
                 </div>
                 <div class="task-section" id="done" data-status="done"
-                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'done')"></div>
+                    ondragover="allowDrop(event)" ondrop="saveTaskDrop(event, 'done')">
+                </div>
             </div>
+        </section>
+
+        <section class="dialog-section">
+            <dialog open>
+                <div class="task-header">
+                    <span>Technical Task</span>
+                    <img src="../assets/icons/close.svg" alt="close icon">
+                </div>
+                <h3>Headline</h3>
+                <p>description</p>
+                <table>
+                    <tr>
+                        <td>Due date:</td>
+                        <td>10/05/2023</td>
+                    </tr>
+                    <tr>
+                        <td>Priority</td>
+                        <td>Medium</td>
+                    </tr>
+                </table>
+                <h4>Assigned To:</h4>
+                <div class="signed-users">
+                    signed users
+                </div>
+                <h4>Subtasks:</h4>
+                <div class="subtasks">
+                    <ul class="subtasks-list">
+                        <li><label><input type="checkbox"> Create the layout</label></li>
+                        <li><label><input type="checkbox"> Implement the functionality</label></li>
+                        <li><label><input type="checkbox"> Test the feature</label></li>
+                    </ul>
+                </div>
+                <div>
+                    <span><img src="../assets/icons/delete.svg" alt="trash can icon">Delete</span>
+                    <span><img src="../assets/icons/edit.svg" alt="edit icon">Edit</span>
+                </div>
+            </dialog>
         </section>
     </main>
 </body>

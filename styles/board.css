@@ -213,3 +213,28 @@
     color: var(--color-white);
     font-size: 16px;
 }
+
+/* dialog */
+
+.dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgb(0 0 0 / 50%);
+}
+
+dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    width: 520px;
+    height: 950px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    box-sizing: border-box;
+    margin: auto;
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 50%);
+}
