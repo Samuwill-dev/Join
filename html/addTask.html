@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../styles/addTask.css" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../styles/legal.css" />
+    <link rel="stylesheet" href="../styles/icons.css" />
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
+    <script src="../js/contactData.js"></script>
+    <script src="../script.js"></script>
   </head>
 
   <body
@@ -93,18 +96,14 @@
               <section class="form-group-title">
                 Priority
                 <div class="form-group-priority">
-                  <button class="priority-button" type="button"id="taskPriorityLow">
+                  <button class="priority-button-urgent" type="button"id="taskPriorityLow">
                     Urgent <img src="../assets/icons/up.svg" alt="Up" />
                   </button>
-                  <button
-                    class="priority-button"
-                    type="button"
-                    id="taskPriorityMedium"
-                  >
+                  <button class="priority-button-medium" type="button"id="taskPriorityMedium">
                     Medium <img src="../assets/icons/medium.svg" alt="Medium" />
                   </button>
                   <button
-                    class="priority-button"
+                    class="priority-button-low"
                     type="button"
                     id="taskPriorityHigh"
                   >
@@ -157,7 +156,13 @@
             </section>
           </form>
         </section>
-      </section>
+        <section class="form-section-footer">
+          <span >*This field is required</span>
+          <section class="form-section-footer-buttons">
+          <button type="button" onclick="clearForm()" class="form-section-footer-button">clear</button>
+          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task</button>
+          </section>
+        </section>
     </main>
   </body>
 </html>
