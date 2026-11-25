@@ -230,32 +230,35 @@ function getContactPhoneError(phone) {
 
 
 /**
- * Hands the checked values over to the contact logic, closes the overlay and shows the success popup.
- * The contact logic adds the saving here, e.g. with a function from contactData.js.
+ * Saves a new contact with a random color, closes the overlay and shows the success popup.
  * @param {{name: string, email: string, phone: string}} values - The checked values.
  */
-function saveContactFromForm(values) {
+async function saveContactFromForm(values) {
+    await addContact({ ...values, color: getRandomColor() });
     closeContactOverlay();
     setTimeout(() => showPopup('contactPopup', POPUP_DURATION), OVERLAY_ANIMATION_TIME);
+    await renderContactlist();
 }
 
 
 /**
- * Hands the changed values of a contact over to the contact logic and closes the overlay.
- * The contact logic adds the saving here, e.g. with a function from contactData.js.
+ * Saves the changed values of a contact, closes the overlay and shows the contact again.
+ * The color stays the same.
  * @param {string} id - The id of the edited contact.
  * @param {{name: string, email: string, phone: string}} values - The checked values.
  */
-function updateContactFromForm(id, values) {
+async function updateContactFromForm(id, values) {
+    await updateContact(id, values);
     closeContactOverlay();
+    await selectContact(id);
 }
 
 
 /**
- * Hands the contact to delete over to the contact logic and closes the overlay.
- * The contact logic adds the deleting here, e.g. with a function from contactData.js.
+ * Closes the overlay and deletes the contact.
  * @param {string} id - The id of the contact to delete.
  */
 function deleteContactFromOverlay(id) {
     closeContactOverlay();
+    deleteContact(id);
 }
