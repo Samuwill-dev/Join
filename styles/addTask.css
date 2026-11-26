@@ -232,3 +232,24 @@
   align-items: center;
   gap: 16px;
 }
+
+.form-section-footer-button {
+  width: 183px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  background-color: #ffffff;
+  cursor: pointer;
+  background-color: #2A3647;
+  color: #ffffff;
+}
+
+.form-section-footer-clear {
+  width: 110px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #2A3647;
+}

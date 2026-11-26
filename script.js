@@ -12,3 +12,13 @@ function goBack() {
 function gotoBoard() {
     window.location.href = '../html/board.html';
 }
+
+function clearForm() {
+    const form = document.querySelector('form');
+    if (!form) return;
+    form.reset();
+    if (form.contains(document.activeElement)) {
+        document.activeElement.blur();
+    }
+    document.querySelectorAll('.error-msg').forEach(msg => msg.textContent = '');
+}
