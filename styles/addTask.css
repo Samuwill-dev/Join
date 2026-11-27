@@ -6,11 +6,6 @@
   margin-right: 96px;
 }
 
-.add-task-main {
-  width: 1208px;
-  height: 849px;
-}
-
 .form-section {
   width: 976px;
   height: 424px;
@@ -223,6 +218,8 @@
   height: 56px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 124px;
 }
 
 .form-section-footer-buttons {
@@ -238,10 +235,15 @@
   height: 56px;
   border-radius: 10px;
   border: 1px solid #686868;
-  background-color: #ffffff;
   cursor: pointer;
   background-color: #2A3647;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .form-section-footer-clear {
@@ -252,4 +254,19 @@
   background-color: #ffffff;
   cursor: pointer;
   color: #2A3647;
+  font-size: 16px;
+  gap: 4px;
+  font-weight: 400;
+}
+
+.form-section-footer-required {
+  width: 170px;
+  height: 27px;
+  margin-left: 117px;
+}
+
+.form-section-footer-required-star {
+  color:#FF8190;
+  width: 27px;
+  height: 170px;
 }

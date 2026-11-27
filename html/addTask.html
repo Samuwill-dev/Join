@@ -37,7 +37,6 @@
       data-active-page="addTask"
     ></div>
     <main>
-      <section class="add-task-main">
         <section class="add-task-form">
           <section class="form-section-header">
             <h1>Add Task</h1>
@@ -46,7 +45,7 @@
           <form class="form-section">
             <section class="form-section-left">
               <div class="form-group-title">
-                Title
+                Title*
                 <div class="form-group">
                   <input
                     class="form-group-text"
@@ -73,7 +72,7 @@
               </div>
 
               <div class="form-group-title-date">
-                Due Date
+                Due Date*
                 <div class="form-group">
                   <input
                     class="form-group-text"
@@ -127,7 +126,7 @@
               </section>
 
               <section class="form-group-status">
-                Category
+                Category*
                 <div class="form-group-status">
                   <select
                     class="form-group-text-assigned"
@@ -157,11 +156,19 @@
           </form>
         </section>
         <section class="form-section-footer">
-          <span >*This field is required</span>
+          <div class="form-section-footer-required">
+            <span>
+              <span class="form-section-footer-required-star">*</span>
+              This field is required
+            </span>
+          </div>
           <section class="form-section-footer-buttons">
           <button type="button" onclick="clearForm()" class="form-section-footer-clear">clear X</button>
-          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task</button>
-          </section>
+          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task  <img
+                    class="summary-to-do-create"
+                    src="../assets/icons/done.svg"
+                    alt="Done Icon"
+                  /></button>
         </section>
     </main>
   </body>
