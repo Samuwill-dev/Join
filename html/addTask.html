@@ -45,7 +45,9 @@
           <form class="form-section">
             <section class="form-section-left">
               <div class="form-group-title">
-                Title*
+                <span>
+                Title <span class="form-section-footer-required-star">*</span>
+                </span>
                 <div class="form-group">
                   <input
                     class="form-group-text"
@@ -72,15 +74,11 @@
               </div>
 
               <div class="form-group-title-date">
-                Due Date*
-                <div class="form-group">
-                  <input
-                    class="form-group-text"
-                    type="date"
-                    id="taskDueDate"
-                    name="taskDueDate"
-                    required
-                  />
+                <span>
+                Due Date <span class="form-section-footer-required-star">*</span>
+                </span>
+                <div class="form-group"> <input  class="form-group-text" type="text" placeholder="dd/mm/yyyy" id="taskDueDate" name="taskDueDate" required/>
+                  <img src="../assets/icons/calender.svg" alt="Calendar" />
                 </div>
               </div>
               <span
@@ -126,7 +124,9 @@
               </section>
 
               <section class="form-group-status">
-                Category*
+                <span>
+                Category <span class="form-section-footer-required-star">*</span>
+                </span>
                 <div class="form-group-status">
                   <select
                     class="form-group-text-assigned"
@@ -164,11 +164,7 @@
           </div>
           <section class="form-section-footer-buttons">
           <button type="button" onclick="clearForm()" class="form-section-footer-clear">clear X</button>
-          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task  <img
-                    class="summary-to-do-create"
-                    src="../assets/icons/done.svg"
-                    alt="Done Icon"
-                  /></button>
+          <button type="submit"  onclick="gotoBoard()" class="form-section-footer-button">Create Task  <img class="summary-to-do-create" src="../assets/icons/done.svg" alt="Done Icon"/></button>
         </section>
     </main>
   </body>
