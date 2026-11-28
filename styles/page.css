@@ -10,7 +10,7 @@
     color: var(--join-marker);
 }
 
-/* headline with back arrow on the right */
+/* headline */
 
 .page-headline {
     display: flex;
@@ -20,7 +20,6 @@
     margin-bottom: 25px;
 }
 
-/* the space below moves to .page-headline, so the arrow is centered next to the title */
 .page-headline h1 {
     margin-bottom: 0;
 }
@@ -44,7 +43,6 @@
     background-color: var(--color-white);
 }
 
-/* legal pages: the arrow is only in the mobile design, help page shows it always */
 .back-arrow-mobile {
     display: none;
 }

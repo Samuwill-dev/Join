@@ -157,6 +157,41 @@
 }
 
 
+/* tablet */
+
+@media (max-width: 1280px) {
+    .contact-overlay {
+        width: calc(100vw - 48px);
+    }
+
+    .overlay-aside {
+        width: 360px;
+        padding: 154px 32px 0;
+    }
+
+    .overlay-aside h2 {
+        font-size: 47px;
+    }
+
+    .overlay-aside p {
+        font-size: 20px;
+    }
+
+    .overlay-main {
+        justify-content: center;
+        min-width: 0;
+        gap: 40px;
+        padding: 0 48px 0 40px;
+    }
+
+    .overlay-form {
+        flex: 1;
+        min-width: 0;
+        max-width: 422px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .contact-overlay {
         width: 396px;
@@ -212,7 +247,9 @@
     }
 
     .overlay-form {
+        flex: none;
         width: 100%;
+        max-width: none;
         margin-top: 28px;
     }
 
