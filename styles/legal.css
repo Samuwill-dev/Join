@@ -2,6 +2,22 @@
     margin: 60px;
 }
 
+@media (max-width: 1024px) {
+    .legal-content {
+        margin: 32px 16px;
+    }
+
+    .legal-content h1 {
+        font-size: 47px;
+    }
+}
+
+@media (max-width: 400px) {
+    .legal-content h1 {
+        font-size: 36px;
+    }
+}
+
 .list {
     margin: 8px 0;
 }

@@ -104,6 +104,7 @@ function getNavigationElements(element, file) {
  * @returns {void}
  */
 function configureExternalLayout(controls) {
+  document.body.classList.add('external-layout');
   controls.internal.remove();
   controls.external.removeAttribute('hidden');
   controls.profile.remove();

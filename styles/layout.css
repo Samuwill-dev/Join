@@ -277,4 +277,51 @@ header h4 {
     .user-menu .user-menu-help {
         display: flex;
     }
+
+     .external-layout aside {
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+
+    .external-layout .sidebar-nav {
+        flex: 0 0 auto;
+    }
+
+    .external-layout .legal-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .external-layout .legal-links a,
+    .external-layout .legal-links a.active {
+        display: flex;
+        align-items: center;
+        height: 76px;
+        margin: 0;
+        padding: 8px 12px;
+        border-radius: 16px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .external-layout aside {
+        padding: 0 8px;
+    }
+
+    .external-layout .legal-links {
+        font-size: 0.875rem;
+    }
+
+    .external-layout .legal-links a,
+    .external-layout .legal-links a.active {
+        padding: 8px;
+    }
 }
