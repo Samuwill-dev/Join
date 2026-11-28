@@ -53,6 +53,16 @@
   padding-left: 16px;
 }
 
+.form-group-text {
+  width: 440px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  font-size: 20px;
+  color: #686868;
+  padding-left: 16px;
+}
+
 .form-group-title-date {
   position: relative;
   top: 20px;
@@ -63,13 +73,14 @@
   height: 96px;
 }
 
-.form-group-text {
+.form-group-text-date {
   width: 440px;
   height: 64px;
   border-radius: 10px;
   border: 1px solid #686868;
   font-size: 20px;
-  color: #686868;
+  background:  #ffffff url("../assets/icons/calender.svg") no-repeat 400px
+  center;
   padding-left: 16px;
 }
 
