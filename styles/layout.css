@@ -312,6 +312,10 @@ header h4 {
 
 
 @media (max-width: 400px) {
+    .nav-item {
+        width: 72px;
+    }
+
     .external-layout aside {
         padding: 0 8px;
     }
