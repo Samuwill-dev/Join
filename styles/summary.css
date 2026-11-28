@@ -1,5 +1,5 @@
 .summary {
-  padding: 56px 96px 0;
+  padding: 110px 96px 0;
 }
 
 /* header */
@@ -7,16 +7,7 @@
 .summary-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  max-width: 625px;
-  height: 73px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.summary-header-title {
-  width: 264px;
+  margin-bottom: 56px;
 }
 
 .summary-header-title h1 {
@@ -24,7 +15,6 @@
 }
 
 .summary-header-subtitle {
-  width: 301px;
   font-size: 27px;
   font-weight: 200;
 }
@@ -32,6 +22,7 @@
 .separator {
   width: 2px;
   height: 59px;
+  margin: 0 13.5px 0 30px;
   background-color: var(--color-blue);
 }
 
