@@ -1,9 +1,12 @@
 /**
- * takes you back to the previous page
+ * Takes you back to the previous page. Without a previous page of Join it opens the fallback page.
+ * @param {string} [fallbackPage] - The page without a previous page, summary.html if not given.
  */
-function goBack() {
+function goBack(fallbackPage) {
   if (document.referrer && document.referrer.includes(window.location.host)) {
     history.back();
+  } else if (fallbackPage) {
+    window.location.href = fallbackPage;
   } else {
     window.location.href = 'summary.html';
   }

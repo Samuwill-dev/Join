@@ -1,0 +1,71 @@
+.page-content {
+    margin: 60px;
+}
+
+.list {
+    margin: 8px 0;
+}
+
+.join {
+    color: var(--join-marker);
+}
+
+/* headline with back arrow on the right */
+
+.page-headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+/* the space below moves to .page-headline, so the arrow is centered next to the title */
+.page-headline h1 {
+    margin-bottom: 0;
+}
+
+.back-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.back-arrow:hover {
+    background-color: var(--color-white);
+}
+
+/* legal pages: the arrow is only in the mobile design, help page shows it always */
+.back-arrow-mobile {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .page-content {
+        margin: 32px 16px;
+    }
+
+    .page-content h1 {
+        font-size: 47px;
+    }
+
+    .back-arrow-mobile {
+        display: flex;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-content h1 {
+        font-size: 32px;
+    }
+}

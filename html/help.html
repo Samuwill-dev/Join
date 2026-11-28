@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/legal.css">
+    <link rel="stylesheet" href="../styles/page.css">
+    <link rel="stylesheet" href="../styles/help.css">
     <script src="../js/session.js"></script>
     <script src="../js/pageHeaderTemplate.js"></script>
     <script src="../script.js"></script>
@@ -20,10 +21,12 @@
 
 <body class="app-layout" onload="requireLogin(); includeHTML()">
     <div class="shared-template" w3-include-html="../templates/template.html" data-active-page="help"></div>
-    <main class="legal-content">
-        <div class="help-headline">
+    <main class="page-content">
+        <div class="page-headline">
             <h1>Help</h1>
-            <img onclick="goBack()" src="../assets/icons/arrow-left-line.svg" alt="arrow to last page">
+            <button class="back-arrow" type="button" onclick="goBack()" aria-label="Back to last page">
+                <img src="../assets/icons/arrow-left-line.svg" alt="">
+            </button>
         </div>
         <p>
             Welcome to the help page for <span class="join">Join</span>, your guide to using our kanban
