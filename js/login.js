@@ -4,6 +4,8 @@ const SIGNUP_FIELDS = ['signupName', 'signupEmail', 'signupPassword', 'signupCon
 const INTRO_WAIT_TIME = 300;
 const INTRO_MOVE_TIME = 800; // same as the transition in login.css
 const BIG_LOGO_WIDTH = 274;
+const BIG_LOGO_WIDTH_MOBILE = 100;
+const MOBILE_MAX_WIDTH = 768; // same as the media query in login.css
 
 
 /**
@@ -306,7 +308,7 @@ function playIntro() {
  * Calculates the transform that moves the logo from its normal place
  * in the header to the middle of the screen and makes it bigger.
  * The logo stays in the header, it is only moved visually.
- * @param {HTMLElement} logo - The logo image in the header.
+ * @param {HTMLElement} logo - The logo in the header.
  * @returns {string} The transform value, e.g. "translate(570px, 384px) scale(2.74)".
  */
 function getTransformToCenter(logo) {
@@ -314,21 +316,33 @@ function getTransformToCenter(logo) {
     // distance from the middle of the logo to the middle of the screen
     const distanceX = window.innerWidth / 2 - (logoBox.left + logoBox.width / 2);
     const distanceY = window.innerHeight / 2 - (logoBox.top + logoBox.height / 2);
-    // how much bigger the logo is in the middle (274px instead of 100px)
-    const scaleFactor = BIG_LOGO_WIDTH / logoBox.width;
+    // how much bigger the logo is in the middle, e.g. 274px instead of 100px
+    const scaleFactor = getBigLogoWidth() / logoBox.width;
     // translate first, otherwise the scale would also make the movement bigger
     return `translate(${distanceX}px, ${distanceY}px) scale(${scaleFactor})`;
 }
 
 
 /**
- * Moves the logo back to the header and fades out the white overlay.
- * @param {HTMLElement} logo - The logo image in the header.
- * @param {HTMLElement} overlay - The white overlay of the intro.
+ * Returns the width of the logo in the middle of the screen at the start of the intro.
+ * @returns {number} The width in px, smaller on mobile.
+ */
+function getBigLogoWidth() {
+    if (window.innerWidth <= MOBILE_MAX_WIDTH) return BIG_LOGO_WIDTH_MOBILE;
+    return BIG_LOGO_WIDTH;
+}
+
+
+/**
+ * Moves the logo back to the header and fades out the overlay.
+ * On mobile the white logo fades into the dark logo at the same time.
+ * @param {HTMLElement} logo - The logo in the header.
+ * @param {HTMLElement} overlay - The overlay of the intro.
  */
 function moveLogoToHeader(logo, overlay) {
     logo.classList.add('logo-moving');
     logo.style.transform = '';
+    document.body.classList.remove('intro-start');
     overlay.classList.add('intro-overlay-hidden');
     setTimeout(() => removeIntro(logo, overlay), INTRO_MOVE_TIME);
 }
@@ -336,11 +350,11 @@ function moveLogoToHeader(logo, overlay) {
 
 /**
  * Ends the intro and removes the overlay from the page.
- * @param {HTMLElement} logo - The logo image in the header.
- * @param {HTMLElement} overlay - The white overlay of the intro.
+ * @param {HTMLElement} logo - The logo in the header.
+ * @param {HTMLElement} overlay - The overlay of the intro.
  */
 function removeIntro(logo, overlay) {
-    document.body.classList.remove('intro');
+    document.body.classList.remove('intro', 'intro-start');
     logo.classList.remove('logo-moving');
     overlay.remove();
 }

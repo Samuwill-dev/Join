@@ -21,6 +21,19 @@
     height: auto;
 }
 
+.login-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.login-logo .login-logo-light {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 800ms ease-in-out;
+}
+
 /* intro animation */
 
 .intro .login-logo {
@@ -204,9 +217,15 @@
 }
 
 
-/* mobile: logo top left, card in the middle, sign up below the card */
-
 @media (max-width: 768px) {
+    .intro-overlay {
+        background-color: var(--sidebar-bg);
+    }
+
+    .intro-start .login-logo .login-logo-light {
+        opacity: 1;
+    }
+
     .login-header {
         display: contents;
     }
