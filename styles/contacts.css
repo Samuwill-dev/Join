@@ -400,3 +400,16 @@
         transform: translate(-50%, 0);
     }
 }
+
+
+@media (max-width: 400px) {
+    .contact-list {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .contact-item {
+        gap: 16px;
+        padding: 15px 16px;
+    }
+}
