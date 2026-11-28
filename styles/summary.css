@@ -156,11 +156,12 @@
   flex: 0 1 385px;
   gap: 3px;
   font-size: 47px;
+  font-weight: 500;
   color: var(--sidebar-bg);
 }
 
 .summary-section-extra-content {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 64px;
+  font-weight: 700;
   color: var(--join-marker);
 }
