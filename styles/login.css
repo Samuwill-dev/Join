@@ -202,3 +202,70 @@
 .login-footer a:hover {
     color: var(--color-blue);
 }
+
+
+/* mobile: logo top left, card in the middle, sign up below the card */
+
+@media (max-width: 768px) {
+    .login-header {
+        display: contents;
+    }
+
+    .login-logo {
+        align-self: flex-start;
+        width: 64px;
+        margin: 37px 0 0 38px;
+    }
+
+    .login-main {
+        order: 1;
+        align-items: center;
+        padding: 24px 16px;
+    }
+
+    .login-card,
+    .signup-card {
+        max-width: 396px;
+        min-height: 0;
+        padding: 32px 16px;
+    }
+
+    .login-card h1 {
+        margin-bottom: 0;
+        font-size: 47px;
+    }
+
+    .title-underline {
+        width: 88px;
+    }
+
+    .login-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
+
+    .login-buttons .btn {
+        width: 180px;
+        height: 51px;
+        padding: 4px 0;
+        font-size: 16px;
+    }
+
+    .back-btn {
+        top: 40px;
+        left: 16px;
+    }
+
+    .signup-wrap {
+        order: 2;
+        justify-content: center;
+        margin: 16px 0 40px;
+    }
+
+    .login-footer {
+        order: 3;
+        justify-content: center;
+        padding: 0 0 22px;
+    }
+}
