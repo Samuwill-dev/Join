@@ -30,6 +30,9 @@
     --color-overlay-backdrop: rgb(0 0 0 / 30%);
     --color-close-hover: rgb(238, 238, 238);
 
+    /* summary colors */
+    --color-summary-shadow: rgb(0 0 0 / 40%);
+
     /* borders */
     --border-width: 2px;
     --border: var(--border-width) solid var(--sidebar-bg);
